@@ -11,10 +11,22 @@
   "sections": {
     "main": {
       "type": "page",
+      "disabled": true,
       "settings": {}
+    },
+    "scary_pranky_UbWkaa": {
+      "type": "scary-pranky",
+      "name": "Scary Pranky Section",
+      "settings": {
+        "banner_image_desktop": "shopify://shop_images/rasna198.png",
+        "banner_image_mobile": "shopify://shop_images/rasna123.png",
+        "title": "Terms & Conditions - Rasna Pranky Offer & chance to get mega scary pranky",
+        "terms_conditions": "<p><strong>i.</strong> Rasna Pvt. Ltd. has included one Pranky free inside each pack of Rasna Nutri+ (32 Glasses Pack) and Rasna Insta Nutri (500g Pack) manufactured from December 2025 onwards. The Pranky is provided free of cost and no additional amount is charged to the consumer for the same.</p><p><strong>ii. Nature of the Pranky</strong><br/>The Pranky is a non-edible novelty item. Children or individuals should not lick, taste, chew, or put the Pranky in their mouth, as the material may not be suitable for ingestion or for every individual's body.</p><p><strong>iii. Choking Hazard Warning</strong><br/>The Pranky is a small item and may pose a choking hazard, especially for young children. Adult supervision is advised. Rasna Pvt. Ltd. shall not be responsible for any misuse of the Pranky.</p><p><strong>iv. Representation Disclaimer</strong><br/>The size, color, and appearance of the Pranky shown on the product pack, website, or promotional material are representative and for creative visualization purposes only. The actual Pranky may vary.</p><p><strong>v. User-Generated Content & Risk</strong><br/>Any videos, photos, or content created and uploaded by consumers featuring the Pranky are done entirely at their own risk. Rasna Pvt. Ltd. shall not be responsible for any injury, loss, damage, or consequence arising from such activities.</p><p><strong>vi. Contest Participation</strong><br/>Participation in any contest related to the Pranky is voluntary. Rasna Pvt. Ltd. is not forcing or compelling any customer to participate.</p><p><strong>vii. Selection of Winners & Prizes</strong><br/>The selection of winners and distribution of prizes shall be solely at the discretion of Rasna Pvt. Ltd. All participants agree to abide by the decisions taken by the company's management team, which shall be final and binding.</p><p><strong>viii. General Disclaimer</strong><br/>Rasna Pvt. Ltd. reserves the right to modify, withdraw, or discontinue the offer or contest at any time without prior notice, subject to applicable laws.</p><p><strong>ix. Legal Disclaimer & Terms</strong><br/>In the event of any dispute arising out of or relating to the absence of “Pranky” from the Rasna Nutri+ 32 Glasses Pack and/or Rasna Insta Nutri+ 500 g Pack, the customer acknowledges and agrees that: The customer shall be solely responsible for the quality, content, and originality of any reel and/or video created and uploaded by them.<br/>By uploading and/or submitting the reel/video, the customer provides their free, voluntary, and irrevocable consent to Rasna to use, reproduce, publish, display, and share the same on Rasna’s official social media platforms and promotional channels, without any further compensation.<br/>Participation does not guarantee selection or receipt of any prize, including but not limited to the “Mega Scary Pranky,” which shall be subject to Rasna’s sole discretion and applicable terms.<br/>Rasna shall not be liable for any technical issues, quality defects, or upload-related errors in the reel/video.<br/>All disputes, if any, shall be subject to the exclusive jurisdiction of the courts at Ahmedabad, Gujarat, India.</p>"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "scary_pranky_UbWkaa"
   ]
 }

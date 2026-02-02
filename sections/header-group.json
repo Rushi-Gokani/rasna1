@@ -1,1 +1,121 @@
-{"type":"header","name":"Header","sections":{"annoucement":{"type":"annoucement","blocks":{"item_jepx4W":{"type":"item","settings":{"message":"Rasna Gst Bachat Utsav","message_link":""}},"item_RDf9cy":{"type":"item","settings":{"message":"SPECIAL FESTIVE OFFER: Free shipping on orders above ₹299","message_link":""}}},"block_order":["item_jepx4W","item_RDf9cy"],"custom_css":[".m-announcement-bar__container {--container-width: 600px;}"],"settings":{"container":"container","color_scheme":"dark","show_announcement":true,"homepage_only":true,"show_close":true,"show_divider":false,"show_nav":true,"autorotate":true,"autorotate_speed":3}},"header":{"type":"header","blocks":{"5e153016-a9d7-46c9-a10e-30d16446793d":{"type":"topbar","disabled":true,"settings":{"color_scheme":"","show_divider":true,"transparent_on_top":false,"show_phone_numb":false,"show_email":false,"show_social_links":true,"show_stores_page":false,"show_currency_switcher":false,"show_country_selector":true,"show_language_switcher":true,"alert_message":"<span>Open Doors To A World Of Fashion  |  <a class=\"m-link-underline\" href=\"#\">Discover More<\/a><span><\/span><\/span>"}}},"block_order":["5e153016-a9d7-46c9-a10e-30d16446793d"],"custom_css":[".m-topbar a[href*=\"facebook\"] {order: 2;}",".social-media-links {column-gap: 30px;}",".m-menu__item[data-index=\"4\"] a {background-color: #e85722; color: white; font-weight: bold; margin-top: 14px; margin-bottom: 10px; padding: 6px 12px; border-radius: 4px; display: inline-block;}",".m-menu-mobile__item[data-url=\"https:\/\/rasna.shop\/collections\/all\"] a{background-color: #e85722; color: white; font-weight: bold; margin-top: 10px; margin-bottom: 10px; margin-left: 4px; padding: 6px 12px; border-radius: 4px; display: inline-block; max-width: 190px;}"],"settings":{"color_scheme":"","color_scheme_menu":"","header_design":"logo-center-menu-left","container":"container-fluid","sticky_header":"on_scroll_up","transparent_on_top":false,"transparent_text_color":"#ffffff","logo_text":"MINIMOG","logo":"shopify:\/\/shop_images\/Untitled_design_7.png","logo_mobile":"shopify:\/\/shop_images\/Untitled_design_7.png","logo_svg":"","logo_mobile_svg":"","logo_transparent_svg":"","logo_max_width":140,"sticky_logo_max_width":115,"mobile_logo_max_width":110,"main_menu":"main-menu","secondary_menu":"","mobile_menu":"","uppercase_parent_level":false,"show_menu_column_divider":true,"search":"show_icon","show_account_icon":true,"show_cart_icon":true,"show_wishlist_icon":false,"show_compare_icon":false,"show_currency_switcher":false,"show_country_selector":false,"show_language_switcher":false,"mb_show_currency_switcher":false,"mb_show_country_selector":false,"mb_show_language_switcher":false}}},"order":["annoucement","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "annoucement": {
+      "type": "annoucement",
+      "blocks": {
+        "item_jepx4W": {
+          "type": "item",
+          "settings": {
+            "message": "Rasna Gst Bachat Utsav",
+            "message_link": ""
+          }
+        },
+        "item_RDf9cy": {
+          "type": "item",
+          "settings": {
+            "message": "SPECIAL FESTIVE OFFER: Free shipping on orders above ₹299",
+            "message_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_jepx4W",
+        "item_RDf9cy"
+      ],
+      "custom_css": [
+        ".m-announcement-bar__container {--container-width: 600px;}"
+      ],
+      "settings": {
+        "container": "container",
+        "color_scheme": "dark",
+        "show_announcement": true,
+        "homepage_only": true,
+        "show_close": true,
+        "show_divider": false,
+        "show_nav": true,
+        "autorotate": true,
+        "autorotate_speed": 3
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "5e153016-a9d7-46c9-a10e-30d16446793d": {
+          "type": "topbar",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "show_divider": true,
+            "transparent_on_top": false,
+            "show_phone_numb": false,
+            "show_email": false,
+            "show_social_links": true,
+            "show_stores_page": false,
+            "show_currency_switcher": false,
+            "show_country_selector": true,
+            "show_language_switcher": true,
+            "alert_message": "<span>Open Doors To A World Of Fashion  |  <a class=\"m-link-underline\" href=\"#\">Discover More</a><span></span></span>"
+          }
+        }
+      },
+      "block_order": [
+        "5e153016-a9d7-46c9-a10e-30d16446793d"
+      ],
+      "custom_css": [
+        ".m-topbar a[href*=\"facebook\"] {order: 2;}",
+        ".m-menu__item[data-index=\"4\"] a {background-color: #e85722; color: white; font-weight: bold; margin-top: 14px; margin-bottom: 10px; padding: 6px 12px; border-radius: 4px; display: inline-block;}",
+        ".m-menu-mobile__item[data-url=\"https://rasna.shop/collections/all\"] a{background-color: #e85722; color: white; font-weight: bold; margin-top: 10px; margin-bottom: 10px; margin-left: 4px; padding: 6px 12px; border-radius: 4px; display: inline-block; max-width: 190px;}",
+        ".m-menu {font-size: 14px !important;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_menu": "",
+        "header_design": "logo-center-menu-left",
+        "container": "container-fluid",
+        "sticky_header": "on_scroll_up",
+        "transparent_on_top": false,
+        "transparent_text_color": "#ffffff",
+        "logo_text": "MINIMOG",
+        "logo": "shopify://shop_images/Untitled_design_7.png",
+        "logo_mobile": "shopify://shop_images/Untitled_design_7.png",
+        "logo_svg": "",
+        "logo_mobile_svg": "",
+        "logo_transparent_svg": "",
+        "logo_max_width": 140,
+        "sticky_logo_max_width": 115,
+        "mobile_logo_max_width": 110,
+        "main_menu": "main-menu",
+        "secondary_menu": "",
+        "mobile_menu": "",
+        "uppercase_parent_level": false,
+        "show_menu_column_divider": true,
+        "search": "show_icon",
+        "show_account_icon": true,
+        "show_cart_icon": true,
+        "show_wishlist_icon": false,
+        "show_compare_icon": false,
+        "show_currency_switcher": false,
+        "show_country_selector": false,
+        "show_language_switcher": false,
+        "mb_show_currency_switcher": false,
+        "mb_show_country_selector": false,
+        "mb_show_language_switcher": false
+      }
+    }
+  },
+  "order": [
+    "annoucement",
+    "header"
+  ]
+}

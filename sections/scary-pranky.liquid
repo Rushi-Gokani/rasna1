@@ -3,6 +3,10 @@
   "name": "Scary Pranky Section",
   "settings": [
     {
+      "type": "header",
+      "content": "Main Banner"
+    },
+    {
       "type": "image_picker",
       "id": "banner_image_desktop",
       "label": "Banner Image (Desktop)"
@@ -11,6 +15,40 @@
       "type": "image_picker",
       "id": "banner_image_mobile",
       "label": "Banner Image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Packaging 1 (Nutri+)"
+    },
+    {
+      "type": "text",
+      "id": "pack_1_title",
+      "label": "Heading",
+      "default": "Rasna Nutri+ 32 Glasses Pack : Including Fruit Beverage Mix & Flavoured Drink Mix"
+    },
+    {
+      "type": "image_picker",
+      "id": "pack_1_image",
+      "label": "Instruction Image"
+    },
+    {
+      "type": "header",
+      "content": "Packaging 2 (Insta Nutri+)"
+    },
+    {
+      "type": "text",
+      "id": "pack_2_title",
+      "label": "Heading",
+      "default": "Rasna Insta Nutri+ 500g Pack : Instant Fruit Beverage Mix"
+    },
+    {
+      "type": "image_picker",
+      "id": "pack_2_image",
+      "label": "Instruction Image"
+    },
+    {
+      "type": "header",
+      "content": "Content"
     },
     {
       "type": "text",
@@ -49,6 +87,37 @@
   </div>
 
   <div class="scary-pranky-content page-width">
+    
+    <div class="scary-pranky-packs">
+      {% if section.settings.pack_1_image != blank or section.settings.pack_1_title != blank %}
+        <div class="pack-item">
+          {% if section.settings.pack_1_title != blank %}
+            <h3 class="pack-title">{{ section.settings.pack_1_title }}</h3>
+          {% endif %}
+          
+          {% if section.settings.pack_1_image != blank %}
+            <div class="pack-image">
+               {{ section.settings.pack_1_image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'w-full h-auto' }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.pack_2_image != blank or section.settings.pack_2_title != blank %}
+        <div class="pack-item">
+          {% if section.settings.pack_2_title != blank %}
+            <h3 class="pack-title">{{ section.settings.pack_2_title }}</h3>
+          {% endif %}
+          
+          {% if section.settings.pack_2_image != blank %}
+            <div class="pack-image">
+               {{ section.settings.pack_2_image | image_url: width: 1200 | image_tag: loading: 'lazy', class: 'w-full h-auto' }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
     {% if section.settings.title != blank %}
       <h2 class="scary-pranky-title">{{ section.settings.title }}</h2>
     {% endif %}
@@ -77,12 +146,39 @@
     padding: 40px 20px;
   }
 
+  .scary-pranky-packs {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .pack-item {
+    width: 100%;
+  }
+
+  .pack-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+  }
+
+  .pack-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
   .scary-pranky-title {
     text-align: center;
     font-size: 28px;
     margin-bottom: 30px;
     font-weight: bold;
     color: #333;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
   }
 
   .scary-pranky-text {
@@ -116,6 +212,10 @@
     
     .scary-pranky-content {
       padding: 30px 15px;
+    }
+
+    .pack-title {
+      font-size: 18px;
     }
   }
 </style>

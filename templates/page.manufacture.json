@@ -1,1 +1,83 @@
-{"sections":{"main":{"type":"page","settings":{}},"custom_manufacture_eiFM3F":{"type":"custom-manufacture","blocks":{"manufacturer_point_Ln4C79":{"type":"manufacturer_point","settings":{"detail_text":"(A) Mfg. by: DAZZLE FOOD AND BEVERAGES PVT. LTD.\nPlot No. 716, Vill-Rukka, Ormanjhi, Ranchi, Ranchi Urban 2, Ranchi, Jharkhand – 835219","manufacturer_logo":"shopify:\/\/shop_images\/fssai_logo.png","manufacturer_license":"<p><strong>Lic. No. 11118001000073<\/strong><\/p>"}},"manufacturer_point_TdPPJx":{"type":"manufacturer_point","settings":{"detail_text":"(B)     Mfg.by:  SBD AGRO FOODS.\n                       Theri Baba Sawan Singh, Hisar Road, Near NH9, Sirsa, Haryana- 125055.","manufacturer_logo":"shopify:\/\/shop_images\/fssai_logo.png","manufacturer_license":"<p><strong>Lic. No. 10818019000120<\/strong><\/p>"}},"manufacturer_point_yP98pn":{"type":"manufacturer_point","settings":{"detail_text":"(C) Mfg.by:  INDO UNITED NATURALS.\n                     Near Foldez Auto Plot -1, Muscat Road, Village Veraval, Ta, Kotda      \n                     Sangani, Dist. Rajkot. Gujarat –360024.","manufacturer_logo":"shopify:\/\/shop_images\/fssai_logo.png","manufacturer_license":"<p><strong>Lic. No. 10721999000424       <br\/><\/strong><\/p>"}},"manufacturer_point_gUjKkX":{"type":"manufacturer_point","settings":{"detail_text":"(D) Mfg.by:  SAM FOOD & BEVERAGE\n                     Sila Sindurighopa, Chowkigate, Changsari, \n                     Kamrup Sadar Sub-division, Kamrup Dist., Assam-781101","manufacturer_logo":"shopify:\/\/shop_images\/fssai_logo.png","manufacturer_license":"<p><strong>Lic. No. 10323002000127<\/strong><\/p>"}}},"block_order":["manufacturer_point_Ln4C79","manufacturer_point_TdPPJx","manufacturer_point_yP98pn","manufacturer_point_gUjKkX"],"settings":{"container":"container-fluid","description":"<p><strong>Mfg.by:<\/strong><br\/>For Manufacturing details refer to the first letter of code A\/B\/C\/D of the Batch number.<\/p>","license_number":"","facebook_link":"https:\/\/www.facebook.com\/rasnainternational","instagram_link":"https:\/\/www.instagram.com\/rasna_international\/","youtube_link":"https:\/\/youtube.com\/@rasnainternational?si=E80kq2jv1DVlGGr2","follow_us_title":"Follow Us:","footer_note":""}}},"order":["main","custom_manufacture_eiFM3F"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "custom_manufacture_eiFM3F": {
+      "type": "custom-manufacture",
+      "blocks": {
+        "manufacturer_point_Ln4C79": {
+          "type": "manufacturer_point",
+          "settings": {
+            "detail_text": "(A) Mfg. by: DAZZLE FOOD AND BEVERAGES PVT. LTD.\nPlot No. 716, Vill-Rukka, Ormanjhi, Ranchi, Ranchi Urban 2, Ranchi, Jharkhand – 835219",
+            "manufacturer_logo": "shopify://shop_images/fssai_logo.png",
+            "manufacturer_license": "<p><strong>Lic. No. 11118001000073</strong></p>"
+          }
+        },
+        "manufacturer_point_TdPPJx": {
+          "type": "manufacturer_point",
+          "settings": {
+            "detail_text": "(B)     Mfg.by:  SBD AGRO FOODS.\n                       Theri Baba Sawan Singh, Hisar Road, Near NH9, Sirsa, Haryana- 125055.",
+            "manufacturer_logo": "shopify://shop_images/fssai_logo.png",
+            "manufacturer_license": "<p><strong>Lic. No. 10818019000120</strong></p>"
+          }
+        },
+        "manufacturer_point_yP98pn": {
+          "type": "manufacturer_point",
+          "settings": {
+            "detail_text": "(C) Mfg.by:  INDO UNITED NATURALS.\n                     Near Foldez Auto Plot -1, Muscat Road, Village Veraval, Ta, Kotda      \n                     Sangani, Dist. Rajkot. Gujarat –360024.",
+            "manufacturer_logo": "shopify://shop_images/fssai_logo.png",
+            "manufacturer_license": "<p><strong>Lic. No. 10721999000424       <br/></strong></p>"
+          }
+        },
+        "manufacturer_point_gUjKkX": {
+          "type": "manufacturer_point",
+          "settings": {
+            "detail_text": "(D) Mfg.by:  SAM FOOD & BEVERAGE\n                     Sila Sindurighopa, Chowkigate, Changsari, \n                     Kamrup Sadar Sub-division, Kamrup Dist., Assam-781101",
+            "manufacturer_logo": "shopify://shop_images/fssai_logo.png",
+            "manufacturer_license": "<p><strong>Lic. No. 10323002000127</strong></p>"
+          }
+        },
+        "manufacturer_point_qqf3VX": {
+          "type": "manufacturer_point",
+          "settings": {
+            "detail_text": "(E)  Mfg.by:  JR FOOD PRODUCTS\n                V. Theri Baba Sawan Singh, Hisar Road, Near NH9, Dist. Sirsa, Haryana- 125055.\n             Fssai Lic. No. 10818019000121",
+            "manufacturer_logo": "shopify://shop_images/fssai_logo.png",
+            "manufacturer_license": "<p><strong>Lic. No. 10323002000127</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "manufacturer_point_Ln4C79",
+        "manufacturer_point_TdPPJx",
+        "manufacturer_point_yP98pn",
+        "manufacturer_point_gUjKkX",
+        "manufacturer_point_qqf3VX"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "description": "<p><strong>Mfg.by:</strong><br/>For Manufacturing details refer to the first letter of code A/B/C/D of the Batch number.</p>",
+        "license_number": "",
+        "facebook_link": "https://www.facebook.com/rasnainternational",
+        "instagram_link": "https://www.instagram.com/rasna_international/",
+        "youtube_link": "https://youtube.com/@rasnainternational?si=E80kq2jv1DVlGGr2",
+        "follow_us_title": "Follow Us:",
+        "footer_note": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_manufacture_eiFM3F"
+  ]
+}

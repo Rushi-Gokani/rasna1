@@ -1,0 +1,424 @@
+{{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+{{ 'collection-multi-list.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign container = section.settings.container
+  if container == 'w-full'
+    assign container = 'container-full'
+  endif
+
+  assign columns = section.settings.columns
+  assign rows = section.settings.rows
+  assign products_limit = columns | times: rows
+
+  assign animation_effect = settings.animations
+  assign animated = false
+  if animation_effect != 'none'
+    assign animated = true
+    if section.settings.animations != 'inherit'
+      assign animation_effect = section.settings.animations
+    endif
+  endif
+%}
+
+<section
+  id="m-collection-multi-list-{{ section.id }}"
+  class="m-section m-collection-multi-list m-gradient m-color-{{ section.settings.color_scheme }}"
+  style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  {% for block in section.blocks %}
+    {% liquid
+      assign collection = collections[block.settings.collection]
+      assign block_heading = block.settings.heading
+      assign block_subheading = block.settings.subheading
+      
+      if collection != blank
+        assign collection_url = collection.url
+        assign collection_title = collection.title
+        assign collection_products = collection.products
+      else
+        assign collection_url = '#'
+        assign collection_title = 'homepage.onboarding.collection_title' | t
+      endif
+    %}
+    
+    <div class="m-collection-multi-list__item {{ container }} m-section-my" {{ block.shopify_attributes }}>
+      {% if block_heading != blank or block_subheading != blank or section.settings.show_view_all %}
+        <div class="m-section__header m:text-{{ section.settings.header_alignment }}">
+          {% if block_subheading != blank %}
+            <p class="m-section__subheading{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">{{ block_subheading }}</p>
+          {% endif %}
+          {% if block_heading != blank %}
+            <h2 class="m-section__heading {{ section.settings.heading_size }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">{{ block_heading }}</h2>
+          {% endif %}
+          {% if section.settings.show_view_all and collection != blank %}
+            <a href="{{ collection_url }}" class="m-section__view-all m-button m-button--link{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+              {{ 'homepage.section.view_all' | t }}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="m-collection-multi-list__grid" style="--column-gap: {{ section.settings.column_gap }}px; --column-gap-mobile: {{ section.settings.mobile_gap }}px;">
+        <div class="m:grid m-cols-{{ columns }} md:m:grid-{{ columns | divided_by: 2.0 | ceil }}-cols">
+          {% if collection != blank %}
+            {% paginate collection_products by products_limit %}
+              {% for product in collection_products limit: products_limit %}
+                <div class="m:column{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}" style="--animation-order: {{ forloop.index }};">
+                  {% render 'product-card-1',
+                    product: product,
+                    image_ratio: section.settings.pcard_image_ratio,
+                    show_vendor: section.settings.show_vendor,
+                    show_inventory: section.settings.show_inventory
+                  %}
+                </div>
+              {% endfor %}
+            {% endpaginate %}
+          {% else %}
+            {% for i in (1..products_limit) %}
+              <div class="m:column{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}" style="--animation-order: {{ forloop.index }};">
+                {% render 'product-card-1', product: blank %}
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      
+      {% if section.settings.show_view_all_button and collection != blank %}
+        <div class="m-collection-multi-list__footer m:text-{{ section.settings.header_alignment }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+          <a href="{{ collection_url }}" class="m-button m-button--primary">
+            {{ section.settings.view_all_text | default: 'View All' }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    {% unless forloop.last %}
+      {% if section.settings.divider %}
+        <div class="m-collection-multi-list__divider {{ container }}">
+          <hr class="m-divider">
+        </div>
+      {% endif %}
+    {% endunless %}
+  {% endfor %}
+</section>
+
+{% stylesheet %}
+  .m-collection-multi-list__item {
+    margin-bottom: 0;
+  }
+  .m-collection-multi-list__item:last-child {
+    margin-bottom: 0;
+  }
+  .m-collection-multi-list__divider {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .m-collection-multi-list__divider hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: {{ section.settings.column_gap | divided_by: 2 }}px 0;
+  }
+  .m-collection-multi-list__grid {
+    margin-top: 30px;
+  }
+  .m-collection-multi-list__footer {
+    margin-top: 30px;
+  }
+  .m-collection-multi-list__footer .m-button {
+    min-width: 180px;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "CAIT Multiple Collections",
+  "tag": "section",
+  "class": "m-section-collection-multi-list",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container type",
+      "default": "container",
+      "options": [
+        {
+          "value": "container-fluid",
+          "label": "Default"
+        },
+        {
+          "value": "w-full",
+          "label": "Full width"
+        },
+        {
+          "value": "container",
+          "label": "Use container box"
+        }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "header",
+      "content": "Header settings"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h3",
+      "options": [
+        {
+          "label": "Small",
+          "value": "h4"
+        },
+        {
+          "label": "Medium",
+          "value": "h3"
+        },
+        {
+          "label": "Large",
+          "value": "h2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View All' link",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Layout settings"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Products per row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Number of rows",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile column gap",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "select",
+      "id": "pcard_image_ratio",
+      "label": "Image aspect ratio",
+      "default": "3/4",
+      "options": [
+        {
+          "value": "original",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "1/1",
+          "label": "1:1"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3"
+        },
+        {
+          "value": "16/9",
+          "label": "16:9"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_inventory",
+      "label": "Show inventory status",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "View All Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all_button",
+      "label": "Show 'View All' button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "Button text",
+      "default": "View All Products"
+    },
+    {
+      "type": "header",
+      "content": "Divider"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "Show divider between collections",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 40,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Animations"
+    },
+    {
+      "type": "select",
+      "id": "animations",
+      "label": "Visible in the view animation",
+      "default": "inherit",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Inherit global setting"
+        },
+        {
+          "value": "fade-in",
+          "label": "Fade in"
+        },
+        {
+          "value": "fade-in-up",
+          "label": "Fade in up"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Leave empty to use collection title"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "CAIT Multiple Collections",
+      "category": "Collection",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {}
+        },
+        {
+          "type": "collection",
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

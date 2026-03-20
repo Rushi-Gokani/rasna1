@@ -67,7 +67,7 @@
         "header_alignment": "center",
         "show_view_all": false,
         "columns": 6,
-        "rows": 2,
+        "rows": 4,
         "column_gap": 30,
         "mobile_gap": 16,
         "pcard_image_ratio": "3/4",

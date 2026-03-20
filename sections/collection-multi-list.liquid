@@ -52,7 +52,7 @@
       {% endif %}
 
       <div class="m-collection-multi-list__grid" style="--column-gap: {{ section.settings.column_gap }}px; --column-gap-mobile: {{ section.settings.mobile_gap }}px;">
-        <div class="m:grid m-cols-{{ columns }} md:m:grid-{{ columns | divided_by: 2.0 | ceil }}-cols">
+        <div class="m:grid m-cols-{{ columns }} m:grid-2-cols md:m:grid-{{ columns | divided_by: 2.0 | ceil }}-cols xl:m:grid-{{ columns }}-cols">
           {% if collection != blank %}
             {% for product in collection.products limit: products_limit %}
               <div class="m:column{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}" style="--animation-order: {{ forloop.index }};">

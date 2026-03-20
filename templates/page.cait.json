@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "collection_banner_custom_kWh7dD": {
+      "type": "collection-banner-custom",
+      "name": "Collection banner custom",
+      "settings": {
+        "color_scheme": "dark",
+        "container": "w-full",
+        "image_position": "top",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "heading": "CAIT",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": false,
+        "collection_all_desc": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "collection_multi_list_WAmVP9": {
+      "type": "collection-multi-list",
+      "blocks": {
+        "collection_X8TPJF": {
+          "type": "collection",
+          "settings": {
+            "collection": "cait-rasana-classic",
+            "heading": "Rasna Fruit Preparation 32 Glasses Pack",
+            "subheading": ""
+          }
+        },
+        "collection_iJcM9f": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "heading": "",
+            "subheading": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_X8TPJF",
+        "collection_iJcM9f"
+      ],
+      "name": "CAIT Multiple Collections",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "heading_size": "h3",
+        "header_alignment": "left",
+        "show_view_all": true,
+        "columns": 4,
+        "rows": 2,
+        "column_gap": 30,
+        "mobile_gap": 16,
+        "pcard_image_ratio": "3/4",
+        "show_vendor": false,
+        "show_inventory": false,
+        "show_view_all_button": false,
+        "view_all_text": "View All Products",
+        "divider": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collection_banner_custom_kWh7dD",
+    "collection_multi_list_WAmVP9"
+  ]
+}

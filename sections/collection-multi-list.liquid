@@ -1,5 +1,5 @@
 {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
-{{ 'collection-multi-list.css' | asset_url | stylesheet_tag }}
+{{ 'collection.css' | asset_url | stylesheet_tag }}
 
 {% liquid
   assign container = section.settings.container
@@ -27,20 +27,9 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   {% for block in section.blocks %}
-    {% liquid
-      assign collection = collections[block.settings.collection]
-      assign block_heading = block.settings.heading
-      assign block_subheading = block.settings.subheading
-      
-      if collection != blank
-        assign collection_url = collection.url
-        assign collection_title = collection.title
-        assign collection_products = collection.products
-      else
-        assign collection_url = '#'
-        assign collection_title = 'homepage.onboarding.collection_title' | t
-      endif
-    %}
+    {%- assign collection = block.settings.collection -%}
+    {%- assign block_heading = block.settings.heading | default: collection.title -%}
+    {%- assign block_subheading = block.settings.subheading -%}
     
     <div class="m-collection-multi-list__item {{ container }} m-section-my" {{ block.shopify_attributes }}>
       {% if block_heading != blank or block_subheading != blank or section.settings.show_view_all %}
@@ -52,7 +41,7 @@
             <h2 class="m-section__heading {{ section.settings.heading_size }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">{{ block_heading }}</h2>
           {% endif %}
           {% if section.settings.show_view_all and collection != blank %}
-            <a href="{{ collection_url }}" class="m-section__view-all m-button m-button--link{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+            <a href="{{ collection.url }}" class="m-section__view-all m-button m-button--link{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
               {{ 'general.button.view_all' | t | default: 'View All' }}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -87,8 +76,8 @@
       
       {% if section.settings.show_view_all_button and collection != blank %}
         <div class="m-collection-multi-list__footer m:text-{{ section.settings.header_alignment }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-          <a href="{{ collection_url }}" class="m-button m-button--primary">
-            {{ section.settings.view_all_text | default: 'View All' }}
+          <a href="{{ collection.url }}" class="m-button m-button--primary">
+            {{ section.settings.view_all_text | default: 'View All Products' }}
           </a>
         </div>
       {% endif %}
@@ -118,7 +107,7 @@
   .m-collection-multi-list__divider hr {
     border: none;
     border-top: 1px solid var(--color-border);
-    margin: {{ section.settings.column_gap | divided_by: 2 }}px 0;
+    margin: 15px 0;
   }
   .m-collection-multi-list__grid {
     margin-top: 30px;
@@ -136,7 +125,6 @@
   "name": "CAIT Multiple Collections",
   "tag": "section",
   "class": "m-section-collection-multi-list",
-  "limit": 1,
   "settings": [
     {
       "type": "header",
@@ -408,12 +396,10 @@
       "category": "Collection",
       "blocks": [
         {
-          "type": "collection",
-          "settings": {}
+          "type": "collection"
         },
         {
-          "type": "collection",
-          "settings": {}
+          "type": "collection"
         }
       ]
     }

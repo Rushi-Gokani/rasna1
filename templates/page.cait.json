@@ -64,7 +64,7 @@
         "container": "container",
         "color_scheme": "",
         "heading_size": "h3",
-        "header_alignment": "left",
+        "header_alignment": "center",
         "show_view_all": false,
         "columns": 6,
         "rows": 2,

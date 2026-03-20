@@ -76,7 +76,7 @@
         "show_view_all_button": false,
         "view_all_text": "View All Products",
         "divider": true,
-        "padding_top": 100,
+        "padding_top": 40,
         "padding_bottom": 0,
         "animations": "inherit"
       }

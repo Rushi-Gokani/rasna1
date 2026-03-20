@@ -53,7 +53,7 @@
           {% endif %}
           {% if section.settings.show_view_all and collection != blank %}
             <a href="{{ collection_url }}" class="m-section__view-all m-button m-button--link{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-              {{ 'homepage.section.view_all' | t }}
+              {{ 'general.button.view_all' | t | default: 'View All' }}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -65,18 +65,16 @@
       <div class="m-collection-multi-list__grid" style="--column-gap: {{ section.settings.column_gap }}px; --column-gap-mobile: {{ section.settings.mobile_gap }}px;">
         <div class="m:grid m-cols-{{ columns }} md:m:grid-{{ columns | divided_by: 2.0 | ceil }}-cols">
           {% if collection != blank %}
-            {% paginate collection_products by products_limit %}
-              {% for product in collection_products limit: products_limit %}
-                <div class="m:column{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}" style="--animation-order: {{ forloop.index }};">
-                  {% render 'product-card-1',
-                    product: product,
-                    image_ratio: section.settings.pcard_image_ratio,
-                    show_vendor: section.settings.show_vendor,
-                    show_inventory: section.settings.show_inventory
-                  %}
-                </div>
-              {% endfor %}
-            {% endpaginate %}
+            {% for product in collection.products limit: products_limit %}
+              <div class="m:column{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}" style="--animation-order: {{ forloop.index }};">
+                {% render 'product-card-1',
+                  product: product,
+                  image_ratio: section.settings.pcard_image_ratio,
+                  show_vendor: section.settings.show_vendor,
+                  show_inventory: section.settings.show_inventory
+                %}
+              </div>
+            {% endfor %}
           {% else %}
             {% for i in (1..products_limit) %}
               <div class="m:column{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}" style="--animation-order: {{ forloop.index }};">

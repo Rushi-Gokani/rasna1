@@ -260,13 +260,13 @@
         {% when 'logo-center-menu-left' %}
           <div class="m-header__container {{ container }}">
             <div class="m-header__inner">
-              <div class="m-header__left m:w-5/12">
+              <div class="m-header__left m:flex-1">
                 {% render 'header-main-menu-container', section: section %}
               </div>
-              <div class="m-header__center m:w-2/12">
+              <div class="m-header__center m:w-auto m:px-4">
                 {% render 'header-logo', header_settings: section.settings %}
               </div>
-              <div class="m-header__right m:w-5/12">
+              <div class="m-header__right m:flex-1">
                 {% liquid
                   if show_language_switcher
                     render 'language-switcher', box_size: 'm:hidden xl:m:block'
@@ -280,6 +280,7 @@
                     render 'country-selector', box_size: 'm:hidden xl:m:block'
                   endif
 
+                  render 'header-custom-menu', header_settings: section.settings
                   render 'header-option-item__search', header_settings: section.settings
                   if show_account_icon
                     render 'header-option-item__account', display_by: 'icon'
@@ -323,6 +324,7 @@
               <div class="m-header__center m:w-8/12">
                 {% render 'header-main-menu-container', section: section %}
                 {% render 'header-logo', header_settings: section.settings %}
+                {% render 'header-custom-menu', header_settings: section.settings %}
                 {% render 'header-main-menu-container', section: section, menu: 'secondary_menu' %}
               </div>
               <div class="m-header__right m:w-2/12">
@@ -351,6 +353,7 @@
             <div class="m-header__inner">
               <div class="m-header__left">
                 {% render 'header-logo', header_settings: section.settings %}
+                {% render 'header-custom-menu', header_settings: section.settings %}
               </div>
               <div class="m-header__center">
                 {% render 'header-main-menu-container', section: section %}
@@ -412,6 +415,7 @@
                 </div>
                 <div class="m-header__center m:w-1/5">
                   {% render 'header-logo', header_settings: section.settings %}
+                  {% render 'header-custom-menu', header_settings: section.settings %}
                 </div>
                 <div class="m-header__right m:w-2/5">
                   {% liquid
@@ -446,6 +450,7 @@
               <div class="m-header__inner">
                 <div class="m-header__left m:w-4/12">
                   {% render 'header-logo', header_settings: section.settings %}
+                  {% render 'header-custom-menu', header_settings: section.settings %}
                 </div>
                 <div class="m-header__right m:w-8/12">
                   {% liquid
@@ -827,6 +832,63 @@
       "id": "show_compare_icon",
       "label": "Show comparison icon",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Custom Menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_custom_menu",
+      "label": "Show custom menu",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "custom_menu_text",
+      "label": "Menu text",
+      "default": "Menu"
+    },
+    {
+      "type": "url",
+      "id": "custom_menu_url",
+      "label": "Menu link"
+    },
+    {
+      "type": "select",
+      "id": "custom_menu_icon",
+      "label": "Menu icon",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "store",
+          "label": "Store"
+        },
+        {
+          "value": "phone",
+          "label": "Phone"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "gift",
+          "label": "Gift"
+        },
+        {
+          "value": "link",
+          "label": "Link"
+        }
+      ]
     },
     {
       "type": "checkbox",

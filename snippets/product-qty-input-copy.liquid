@@ -1,0 +1,142 @@
+<m-quantity-input-step
+  class="m-quantity {{ class }}"
+  data-product-id="{{ product.id }}"
+  data-step="10"
+>
+  <button
+    class="m-quantity__button m:display-flex m:items-center m:justify-center"
+    type="button"
+    aria-label="{{ 'products.product.decrease_quantity' | t: title: product.title }}" 
+    name="minus"
+  >
+    <svg
+      fill="currentColor"
+      stroke="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+    >
+      <path d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
+    </svg>
+  </button>
+  <input
+    class="m-quantity__input form-field form-field--no-border m:text-center"
+    style="min-width: 60px; width: 60px;"
+    type="number"
+    name="quantity"
+    aria-label="{{ 'products.product.product_quantity' | t }}"
+    data-product-id="{{ product.id }}"
+    data-min="10"
+    min="10"
+    {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+      {% assign max_qty = product.selected_or_first_available_variant.quantity_rule.max %}
+      {% if max_qty %}
+        data-max="{{ max_qty }}"
+        max="{{ max_qty }}"
+      {% endif %}
+    {% endif %}
+    step="10"
+    value="10"
+    form="{{ product_form_id }}"
+    pattern="[0-9]*"
+    inputmode="numeric"
+  >
+  <button
+    class="m-quantity__button m:display-flex m:items-center m:justify-center"
+    type="button"
+    aria-label="{{ 'products.product.increase_quantity' | t: title: product.title }}"
+    name="plus"
+  >
+    <svg
+      fill="currentColor"
+      stroke="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+    >
+      <path d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"/>
+    </svg>
+  </button>
+</m-quantity-input-step>
+
+<script>
+if (!customElements.get('m-quantity-input-step')) {
+  class MQuantityInputStep extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      if (this.dataset.initialized) return;
+      this.dataset.initialized = 'true';
+      
+      this.input = this.querySelector('input');
+      this.minValue = 10;
+      this.maxValue = null;
+      
+      if (this.input.dataset.min) {
+        this.minValue = parseInt(this.input.dataset.min);
+      }
+      if (this.input.dataset.max) {
+        this.maxValue = parseInt(this.input.dataset.max);
+      }
+
+      this.enforceStep(this.input);
+
+      this.input.addEventListener('change', this.onInputChange.bind(this));
+      this.input.addEventListener('blur', this.onBlur.bind(this));
+
+      this.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', this.onButtonClick.bind(this));
+      });
+    }
+
+    enforceStep(input) {
+      let value = parseInt(input.value);
+      if (isNaN(value) || value < this.minValue) {
+        value = this.minValue;
+      }
+      
+      if (value % 10 !== 0) {
+        value = Math.ceil(value / 10) * 10;
+      }
+      
+      if (this.maxValue && value > this.maxValue) {
+        value = Math.floor(this.maxValue / 10) * 10;
+      }
+      
+      input.value = value;
+    }
+
+    onInputChange(e) {
+      this.enforceStep(e.target);
+    }
+
+    onBlur(e) {
+      this.enforceStep(e.target);
+    }
+
+    onButtonClick(e) {
+      e.preventDefault();
+      const button = e.currentTarget;
+      const isPlus = button.name === 'plus';
+      let currentValue = parseInt(this.input.value) || this.minValue;
+
+      if (isPlus) {
+        currentValue += 10;
+        if (this.maxValue && currentValue > this.maxValue) {
+          currentValue = this.maxValue;
+        }
+      } else {
+        currentValue -= 10;
+        if (currentValue < this.minValue) {
+          currentValue = this.minValue;
+        }
+      }
+
+      this.input.value = currentValue;
+      this.input.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
+
+  customElements.define('m-quantity-input-step', MQuantityInputStep);
+}
+</script>

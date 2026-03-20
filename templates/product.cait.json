@@ -20,7 +20,7 @@
       }
     },
     "main": {
-      "type": "main-product",
+      "type": "main-product-copy",
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",

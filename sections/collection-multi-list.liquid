@@ -51,7 +51,7 @@
         </div>
       {% endif %}
 
-      <div class="m-collection-multi-list__grid">>
+      <div class="m-collection-multi-list__grid">
         <div class="m:grid m-cols-{{ columns }} m:grid-2-cols md:m:grid-{{ columns | divided_by: 2.0 | ceil }}-cols xl:m:grid-{{ columns }}-cols">
           {% if collection != blank %}
             {% for product in collection.products limit: products_limit %}
@@ -98,9 +98,30 @@
     padding-top: {{ section.settings.padding_top }}px;
     padding-bottom: {{ section.settings.padding_bottom }}px;
   }
-  .m-collection-multi-list__grid {
+  #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__grid {
     --column-gap: {{ section.settings.column_gap }}px;
     --column-gap-mobile: {{ section.settings.mobile_gap }}px;
+    gap: var(--column-gap);
+    margin-top: 30px;
+  }
+  @media (max-width: 767px) {
+    #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__grid {
+      gap: var(--column-gap-mobile);
+    }
+  }
+  #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__item {
+    margin-bottom: 0;
+  }
+  #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__divider hr {
+    border: none;
+    border-top: 1px solid rgba(var(--color-foreground), 0.1);
+    margin: 30px 0;
+  }
+  #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__footer {
+    margin-top: 30px;
+  }
+  #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__footer .m-button {
+    min-width: 180px;
   }
 {% endstyle %}
 

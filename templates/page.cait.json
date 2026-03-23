@@ -45,6 +45,14 @@
             "subheading": ""
           }
         },
+        "collection_FqjRUA": {
+          "type": "collection",
+          "settings": {
+            "collection": "1-to-2-food-mix",
+            "heading": "",
+            "subheading": ""
+          }
+        },
         "collection_iJcM9f": {
           "type": "collection",
           "disabled": true,
@@ -57,6 +65,7 @@
       },
       "block_order": [
         "collection_X8TPJF",
+        "collection_FqjRUA",
         "collection_iJcM9f"
       ],
       "name": "CAIT Multiple Collections",

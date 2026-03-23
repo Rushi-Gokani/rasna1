@@ -123,7 +123,7 @@
         "rows": 4,
         "column_gap": 30,
         "mobile_gap": 16,
-        "pcard_image_ratio": "original",
+        "pcard_image_ratio": "3/4",
         "show_vendor": false,
         "show_inventory": false,
         "show_view_all_button": false,

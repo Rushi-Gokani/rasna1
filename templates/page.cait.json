@@ -55,9 +55,48 @@
         },
         "collection_iJcM9f": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "collection": "",
+            "collection": "rasna-fruit-preparation-rs-10-pack",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_wGUTLq": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-fruit-preparation-500g-zipper-pack",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_X4UfMC": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-fruit-preparation-750-ml-squash",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_6cz7Ng": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-syrup-750-ml",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_PiaL8J": {
+          "type": "collection",
+          "settings": {
+            "collection": "jaljira-re-1-pack",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_mqMLEX": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-fruit-preparation-10-ka-3-rs-10-pack",
             "heading": "",
             "subheading": ""
           }
@@ -66,7 +105,12 @@
       "block_order": [
         "collection_X8TPJF",
         "collection_FqjRUA",
-        "collection_iJcM9f"
+        "collection_iJcM9f",
+        "collection_wGUTLq",
+        "collection_X4UfMC",
+        "collection_6cz7Ng",
+        "collection_PiaL8J",
+        "collection_mqMLEX"
       ],
       "name": "CAIT Multiple Collections",
       "settings": {

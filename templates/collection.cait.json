@@ -31,35 +31,15 @@
     "rich_text_6cm7Yt": {
       "type": "rich-text",
       "blocks": {
-        "heading_qK4tck": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000",
-            "heading_size": "h2"
-          }
-        },
         "text_BxVFUd": {
           "type": "text",
           "settings": {
             "text": "<p>SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000</p>"
           }
-        },
-        "button_tjDBfB": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Shop Collection",
-            "button_link": "",
-            "button_style": "m-button--link",
-            "button_size": ""
-          }
         }
       },
       "block_order": [
-        "heading_qK4tck",
-        "text_BxVFUd",
-        "button_tjDBfB"
+        "text_BxVFUd"
       ],
       "name": "Rich text",
       "settings": {

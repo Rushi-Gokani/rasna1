@@ -101,6 +101,14 @@
             "subheading": ""
           }
         },
+        "collection_wTwfTt": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-fruit-preparation-rs-5-stick-pack",
+            "heading": "",
+            "subheading": ""
+          }
+        },
         "collection_mqMLEX": {
           "type": "collection",
           "settings": {
@@ -119,6 +127,7 @@
         "collection_6cz7Ng",
         "collection_PiaL8J",
         "collection_inj6qr",
+        "collection_wTwfTt",
         "collection_mqMLEX"
       ],
       "name": "CAIT Multiple Collections",

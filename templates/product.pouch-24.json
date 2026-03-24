@@ -19,6 +19,84 @@
         "animations": "inherit"
       }
     },
+    "product_24_Fp6na3": {
+      "type": "product-24",
+      "blocks": {
+        "title_CK4jU4": {
+          "type": "title",
+          "settings": {}
+        },
+        "text_jnhhG3": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
+            "text_style": "body"
+          }
+        },
+        "text_yND6TT": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.minimum_order.value }}",
+            "text_style": "body"
+          }
+        },
+        "price_4dJjaK": {
+          "type": "price",
+          "settings": {
+            "show_saving": false,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "variant_picker_Bfbq3K": {
+          "type": "variant_picker",
+          "settings": {
+            "size_title": "Size"
+          }
+        },
+        "buy_buttons_p8frRj": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_atc_button": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description_hKpPPq": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_CK4jU4",
+        "text_jnhhG3",
+        "text_yND6TT",
+        "price_4dJjaK",
+        "variant_picker_Bfbq3K",
+        "buy_buttons_p8frRj",
+        "description_hKpPPq"
+      ],
+      "name": "Product 24 Qty",
+      "settings": {
+        "container": "container",
+        "layout": "layout-6",
+        "show_atwl": true,
+        "enable_history_state": true,
+        "enable_variant_group_images": false,
+        "disable_selected_variant_default": false,
+        "show_featured_media": true,
+        "show_zoom_button": true,
+        "enable_video_autoplay": false,
+        "show_nav_media_mobile": false,
+        "show_pagination_mobile": true,
+        "use_sticky_atc": true,
+        "use_sticky_atc_on_mobile": true,
+        "enable_dynamic_checkout": false,
+        "sticky_atc_wishtlist": false,
+        "sticky_atc_compare": false
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -30,6 +108,20 @@
           "type": "title",
           "settings": {}
         },
+        "text_nx4CpD": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
+            "text_style": "body"
+          }
+        },
+        "text_gpGhJY": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.minimum_order.value }}",
+            "text_style": "body"
+          }
+        },
         "custom_text_MRNttg": {
           "type": "custom_text",
           "disabled": true,
@@ -39,6 +131,7 @@
         },
         "text_MwBw6V": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "RASNA GST BACHAT UTSAV",
             "text_style": "body"
@@ -49,6 +142,13 @@
           "settings": {
             "show_saving": false,
             "sale_badge_type": "percentage"
+          }
+        },
+        "custom_text_gKEqWb": {
+          "type": "custom_text",
+          "disabled": true,
+          "settings": {
+            "content": ""
           }
         },
         "variant_picker": {
@@ -132,9 +232,12 @@
       "block_order": [
         "badge_ChqgGj",
         "title",
+        "text_nx4CpD",
+        "text_gpGhJY",
         "custom_text_MRNttg",
         "text_MwBw6V",
         "price",
+        "custom_text_gKEqWb",
         "variant_picker",
         "buy_buttons",
         "addons",
@@ -146,9 +249,8 @@
         "collapsible_tab_RFfJg7",
         "salepify_free_gift_block_rwwDJd"
       ],
-      "custom_css": [
-        ".m-product-text {background-color: #e85722; /* orange background */ color: white; /* white text */ font-weight: bold; /* bold text */ padding: 6px 12px; /* optional spacing */ border-radius: 4px; /* optional rounded corners */ display: inline-block; /* so background wraps text nicely */}"
-      ],
+      "disabled": true,
+      "custom_css": [],
       "settings": {
         "container": "container",
         "layout": "layout-4",
@@ -484,6 +586,7 @@
   },
   "order": [
     "breadcrumb",
+    "product_24_Fp6na3",
     "main",
     "product-details-tabs",
     "scrolling_promotion_MVNN6Q",

@@ -57,6 +57,13 @@
             "size_title": "Size"
           }
         },
+        "text_DHVWt8": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
+            "text_style": "body"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -136,6 +143,7 @@
         "text_MwBw6V",
         "price",
         "variant_picker",
+        "text_DHVWt8",
         "buy_buttons",
         "addons",
         "sc_back_in_stock_app_block_HtHHyQ",

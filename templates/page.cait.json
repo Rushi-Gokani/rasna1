@@ -93,6 +93,14 @@
             "subheading": ""
           }
         },
+        "collection_inj6qr": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-fruit-preparation-rs-2-pack",
+            "heading": "",
+            "subheading": ""
+          }
+        },
         "collection_mqMLEX": {
           "type": "collection",
           "settings": {
@@ -110,6 +118,7 @@
         "collection_X4UfMC",
         "collection_6cz7Ng",
         "collection_PiaL8J",
+        "collection_inj6qr",
         "collection_mqMLEX"
       ],
       "name": "CAIT Multiple Collections",

@@ -89,18 +89,18 @@
             "subheading": ""
           }
         },
-        "collection_FqjRUA": {
-          "type": "collection",
-          "settings": {
-            "collection": "1-to-2-food-mix",
-            "heading": "",
-            "subheading": ""
-          }
-        },
         "collection_iJcM9f": {
           "type": "collection",
           "settings": {
             "collection": "rasna-fruit-preparation-rs-10-pack",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_FqjRUA": {
+          "type": "collection",
+          "settings": {
+            "collection": "1-to-2-food-mix",
             "heading": "",
             "subheading": ""
           }
@@ -164,8 +164,8 @@
       },
       "block_order": [
         "collection_X8TPJF",
-        "collection_FqjRUA",
         "collection_iJcM9f",
+        "collection_FqjRUA",
         "collection_wGUTLq",
         "collection_X4UfMC",
         "collection_6cz7Ng",

@@ -101,7 +101,11 @@
         "show_wishlist_icon": false,
         "show_compare_icon": false,
         "show_custom_menu": true,
+<<<<<<< HEAD
         "custom_menu_text": "<div style=\"line-height: 1.25; margin-top: 1px; text-align: center; font-size: 12px;\">Exclusive for CAIT Members<br><span style=\"font-size: 10px; font-weight: 400; opacity: 0.9;\">Confederation of All India Traders</span></div>",
+=======
+        "custom_menu_text": "Exclusive for CAIT Members <br> Confederation of All India Traders",
+>>>>>>> 4f008d4cf6bf299d4840a6a97c51018f2c42151b
         "custom_menu_url": "shopify://pages/cait",
         "custom_menu_icon": "none",
         "show_currency_switcher": false,
@@ -150,50 +154,11 @@
         "autorotate": false,
         "autorotate_speed": 3
       }
-    },
-    "annoucement_iYF9bg": {
-      "type": "annoucement",
-      "blocks": {
-        "item_J7amTj": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "message": "Rasna Gst Bachat Utsav",
-            "message_link": ""
-          }
-        },
-        "item_7mcLNe": {
-          "type": "item",
-          "settings": {
-            "message": "SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000",
-            "message_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_J7amTj",
-        "item_7mcLNe"
-      ],
-      "custom_css": [
-        ".m-announcement-bar__container {--container-width: 600px;}"
-      ],
-      "settings": {
-        "container": "w-full",
-        "color_scheme": "dark",
-        "show_announcement": true,
-        "homepage_only": true,
-        "show_close": false,
-        "show_divider": false,
-        "show_nav": false,
-        "autorotate": false,
-        "autorotate_speed": 3
-      }
     }
   },
   "order": [
     "annoucement",
     "header",
-    "annoucement_jr3LrX",
-    "annoucement_iYF9bg"
+    "annoucement_jr3LrX"
   ]
 }

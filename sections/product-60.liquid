@@ -137,7 +137,7 @@
       </div>
       <div class="m-main-product--info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
         <div class="m-product-info--wrapper m:text-color-body">
-          {% render 'main-product-blocks', section: section, product: product %}
+          {% render 'main-product-blocks-60', section: section, product: product %}
         </div>
       </div>
       <script id="productData" type="application/json">
@@ -147,7 +147,7 @@
   </div>
 
   {% if section.settings.use_sticky_atc or section.settings.use_sticky_atc_on_mobile %}
-    {% render 'sticky-atc', section: section, product: product, first_3d_model: first_3d_model %}
+    {% render 'sticky-atc-60', section: section, product: product, first_3d_model: first_3d_model %}
   {% endif %}
 </div>
 {%- if section.settings.show_zoom_button -%}
@@ -879,7 +879,7 @@
           "label": "Required",
           "id": "field_required",
           "default": false,
-          "info": "If you use “Required” with a checkbox, then the checkbox will need to be checked for the customer to add the item to the cart."
+          "info": "If you use 'Required' with a checkbox, then the checkbox will need to be checked for the customer to add the item to the cart."
         },
         {
           "type": "checkbox",
@@ -910,7 +910,7 @@
           "label": "Required",
           "id": "field_required",
           "default": false,
-          "info": "If you use “Required” with a checkbox, then the checkbox will need to be checked for the customer to add the item to the cart."
+          "info": "If you use 'Required' with a checkbox, then the checkbox will need to be checked for the customer to add the item to the cart."
         },
         {
           "type": "checkbox",
@@ -1075,13 +1075,23 @@
   ],
   "presets": [
     {
-      "name": "Main Product (Custom)",
+      "name": "Product 60 Qty",
       "blocks": [
-        { "type": "title" },
-        { "type": "price" },
-        { "type": "variant_picker" },
-        { "type": "buy_buttons" },
-        { "type": "description" }
+        {
+          "type": "title"
+        },
+        {
+          "type": "price"
+        },
+        {
+          "type": "variant_picker"
+        },
+        {
+          "type": "buy_buttons"
+        },
+        {
+          "type": "description"
+        }
       ]
     }
   ]

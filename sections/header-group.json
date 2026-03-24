@@ -111,10 +111,89 @@
         "mb_show_country_selector": false,
         "mb_show_language_switcher": false
       }
+    },
+    "annoucement_jr3LrX": {
+      "type": "annoucement",
+      "blocks": {
+        "item_TwDfhr": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "message": "Rasna Gst Bachat Utsav",
+            "message_link": ""
+          }
+        },
+        "item_P3ntmk": {
+          "type": "item",
+          "settings": {
+            "message": "SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000",
+            "message_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_TwDfhr",
+        "item_P3ntmk"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".m-announcement-bar__container {--container-width: 600px;}"
+      ],
+      "settings": {
+        "container": "w-full",
+        "color_scheme": "dark",
+        "show_announcement": true,
+        "homepage_only": true,
+        "show_close": false,
+        "show_divider": false,
+        "show_nav": false,
+        "autorotate": false,
+        "autorotate_speed": 3
+      }
+    },
+    "annoucement_iYF9bg": {
+      "type": "annoucement",
+      "blocks": {
+        "item_J7amTj": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "message": "Rasna Gst Bachat Utsav",
+            "message_link": ""
+          }
+        },
+        "item_7mcLNe": {
+          "type": "item",
+          "settings": {
+            "message": "SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000",
+            "message_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_J7amTj",
+        "item_7mcLNe"
+      ],
+      "custom_css": [
+        ".m-announcement-bar__container {--container-width: 600px;}"
+      ],
+      "settings": {
+        "container": "w-full",
+        "color_scheme": "dark",
+        "show_announcement": true,
+        "homepage_only": true,
+        "show_close": false,
+        "show_divider": false,
+        "show_nav": false,
+        "autorotate": false,
+        "autorotate_speed": 3
+      }
     }
   },
   "order": [
     "annoucement",
-    "header"
+    "header",
+    "annoucement_jr3LrX",
+    "annoucement_iYF9bg"
   ]
 }

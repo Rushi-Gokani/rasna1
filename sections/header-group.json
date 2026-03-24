@@ -101,7 +101,7 @@
         "show_wishlist_icon": false,
         "show_compare_icon": false,
         "show_custom_menu": true,
-        "custom_menu_text": "<div style=\"line-height: 1.1; margin-top: 2px;\">Exclusive for CAIT Members<br><span style=\"font-size: 10px; font-weight: 400; opacity: 0.9;\">The Confederation of All India Traders</span></div>",
+        "custom_menu_text": "<div style=\"line-height: 1.25; margin-top: 1px; text-align: center; font-size: 12px;\">Exclusive for CAIT Members<br><span style=\"font-size: 10px; font-weight: 400; opacity: 0.9;\">Confederation of All India Traders</span></div>",
         "custom_menu_url": "shopify://pages/cait",
         "custom_menu_icon": "none",
         "show_currency_switcher": false,

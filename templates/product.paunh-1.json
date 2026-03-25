@@ -197,6 +197,7 @@
         "description",
         "tab"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-tabs__header {justify-content: flex-start;}"
       ],

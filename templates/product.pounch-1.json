@@ -33,14 +33,14 @@
         "text_K8UAAt": {
           "type": "text",
           "settings": {
-            "text": "Text block",
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
             "text_style": "body"
           }
         },
         "text_LxVfyd": {
           "type": "text",
           "settings": {
-            "text": "Text block",
+            "text": "{{ product.metafields.custom.minimum_order.value }}",
             "text_style": "body"
           }
         },

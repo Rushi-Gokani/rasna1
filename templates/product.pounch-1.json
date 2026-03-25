@@ -20,7 +20,7 @@
       }
     },
     "main": {
-      "type": "main-product-copy",
+      "type": "main-product",
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",
@@ -29,6 +29,20 @@
         "title": {
           "type": "title",
           "settings": {}
+        },
+        "text_K8UAAt": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
+            "text_style": "body"
+          }
+        },
+        "text_LxVfyd": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.minimum_order.value }}",
+            "text_style": "body"
+          }
         },
         "custom_text_MRNttg": {
           "type": "custom_text",
@@ -39,15 +53,9 @@
         },
         "text_MwBw6V": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "{{ product.metafields.custom.product_carton_size.value }}",
-            "text_style": "body"
-          }
-        },
-        "text_AbjELF": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.custom.minimum_order.value }}",
+            "text": "RASNA GST BACHAT UTSAV",
             "text_style": "body"
           }
         },
@@ -139,9 +147,10 @@
       "block_order": [
         "badge_ChqgGj",
         "title",
+        "text_K8UAAt",
+        "text_LxVfyd",
         "custom_text_MRNttg",
         "text_MwBw6V",
-        "text_AbjELF",
         "price",
         "variant_picker",
         "buy_buttons",
@@ -197,7 +206,6 @@
         "description",
         "tab"
       ],
-      "disabled": true,
       "custom_css": [
         ".m-tabs__header {justify-content: flex-start;}"
       ],

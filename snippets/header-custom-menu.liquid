@@ -25,6 +25,25 @@
     .m-header__custom-menu-text {
       margin-left: 6px;
     }
+    @media (max-width: 1023px) {
+      .m-header__custom-menu {
+        margin-left: 0;
+        flex-shrink: 1;
+        min-width: 0;
+      }
+      .m-header__custom-menu-link {
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 3px;
+      }
+      .m-header__custom-menu-text {
+        margin-left: 4px;
+      }
+      .m-header__custom-menu-icon svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
   </style>
   <div class="m-header__custom-menu m:flex m:items-center">
     <a href="{{ header_settings.custom_menu_url }}" class="m-header__custom-menu-link">

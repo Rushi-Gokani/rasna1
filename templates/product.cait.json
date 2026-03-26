@@ -87,6 +87,7 @@
         },
         "shipping_VBJFtx": {
           "type": "shipping",
+          "disabled": true,
           "settings": {
             "show_delivery_times": true,
             "deliver_text": "Estimated Delivery:",

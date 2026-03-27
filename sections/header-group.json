@@ -33,6 +33,7 @@
         "item_jepx4W",
         "item_RDf9cy"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}"
       ],

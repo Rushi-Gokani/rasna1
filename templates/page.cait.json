@@ -48,7 +48,7 @@
         "text_wXrmQn": {
           "type": "text",
           "settings": {
-            "text": "<p>Please register on WhatsApp at +91 63587 87945 to learn about exclusive offers and discounts for CAIT members.</p>"
+            "text": "<p>Please register on WhatsApp at <a href=\"https://wa.me/916358787945\" target=\"_blank\" title=\"https://wa.me/916358787945\">+91 63587 87945</a> to learn about exclusive offers and discounts for CAIT members.</p>"
           }
         },
         "button_EBDzBe": {

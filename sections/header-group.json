@@ -33,6 +33,7 @@
         "item_jepx4W",
         "item_RDf9cy"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}"
       ],
@@ -72,7 +73,9 @@
       "block_order": [
         "5e153016-a9d7-46c9-a10e-30d16446793d"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".m-product-text {color: #e85722; /* orange background */ color: #e85722; /* white text */ font-weight: bold; /* bold text */ padding: 6px 12px; /* optional spacing */ border-radius: 4px; /* optional rounded corners */ display: inline-block; /* so background wraps text nicely */ font-size: 20px;}"
+      ],
       "settings": {
         "color_scheme": "",
         "color_scheme_menu": "",
@@ -100,8 +103,8 @@
         "show_cart_icon": true,
         "show_wishlist_icon": false,
         "show_compare_icon": false,
-        "show_custom_menu": true,
-        "custom_menu_text": "Exclusive for CAIT Members",
+        "show_custom_menu": false,
+        "custom_menu_text": "",
         "custom_menu_url": "shopify://pages/cait",
         "custom_menu_icon": "none",
         "show_currency_switcher": false,

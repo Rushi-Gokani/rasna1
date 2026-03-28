@@ -64,6 +64,7 @@
         },
         "description_YYJmaN": {
           "type": "description",
+          "disabled": true,
           "settings": {}
         }
       },

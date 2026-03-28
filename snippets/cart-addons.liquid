@@ -1,5 +1,8 @@
 {% if settings.cart_notes_enable or settings.cart_estimate_shipping or settings.discount_code_enable %}
   <m-cart-addons class="m-cart-addon">
+    <div class="m-cart-return-policy m:text-center m:font-medium m:mb-4" style="margin-bottom: 1rem;">
+      {{ 'cart.general.return_policy' | t }}
+    </div>
     <div class="m-cart-addon__header">
       {% if settings.cart_notes_enable %}
         <button data-open="note" type="button" class="m-cart-addon--trigger-button m-tooltip m-tooltip--top">

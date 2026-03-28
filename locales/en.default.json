@@ -167,7 +167,8 @@
       "delivery_title": "Delivery",
       "delivery_time": "Delivery time",
       "delivery_label": "Pick a delivery date:",
-      "delivery_error": "Please choose the current or future time."
+      "delivery_error": "Please choose the current or future time.",
+      "return_policy": "The order cannot be returned."
     },
     "label": {
       "product": "Product",

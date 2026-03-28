@@ -177,7 +177,7 @@
       "delivery_time": "Delivery time",
       "delivery_label": "Pick a delivery date:",
       "delivery_error": "Please choose the current or future time.",
-      "return_policy": "The order cannot be returned."
+      "return_policy": "Once an order is placed, it cannot be canceled."
     },
     "label": {
       "product": "Product",

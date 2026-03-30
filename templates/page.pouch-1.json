@@ -23,59 +23,15 @@
         "image_position": "top",
         "enable_parallax": false,
         "parallax_direction": "vertical",
-        "heading": "CAIT <br> The Confederation of All India Traders",
+        "heading": "CAIT",
         "text_alignment": "center",
         "text_color": "inherit",
         "upper_title": false,
-        "show_desc": true,
+        "show_desc": false,
         "collection_all_desc": "",
         "padding_top": 100,
         "padding_bottom": 100,
         "enable_bg_zoom_effect": true
-      }
-    },
-    "rich_text_diaf9B": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_yLX44e": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h2"
-          }
-        },
-        "text_wXrmQn": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Please register on WhatsApp at <a href=\"https://wa.me/916358787945\" target=\"_blank\" title=\"https://wa.me/916358787945\">+91 63587 87945</a> to learn about exclusive offers and discounts for CAIT members.</p>"
-          }
-        },
-        "button_EBDzBe": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Shop Collection",
-            "button_link": "",
-            "button_style": "m-button--link",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_yLX44e",
-        "text_wXrmQn",
-        "button_EBDzBe"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "container": "container",
-        "color_scheme": "",
-        "content_alignment": "center",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_class": "",
-        "animations": "inherit"
       }
     },
     "collection_multi_list_WAmVP9": {
@@ -89,18 +45,18 @@
             "subheading": ""
           }
         },
-        "collection_iJcM9f": {
-          "type": "collection",
-          "settings": {
-            "collection": "rasna-fruit-preparation-rs-10-pack",
-            "heading": "",
-            "subheading": ""
-          }
-        },
         "collection_FqjRUA": {
           "type": "collection",
           "settings": {
             "collection": "1-to-2-food-mix",
+            "heading": "",
+            "subheading": ""
+          }
+        },
+        "collection_iJcM9f": {
+          "type": "collection",
+          "settings": {
+            "collection": "rasna-fruit-preparation-rs-10-pack",
             "heading": "",
             "subheading": ""
           }
@@ -137,22 +93,6 @@
             "subheading": ""
           }
         },
-        "collection_inj6qr": {
-          "type": "collection",
-          "settings": {
-            "collection": "rasna-fruit-preparation-rs-2-pack",
-            "heading": "",
-            "subheading": ""
-          }
-        },
-        "collection_wTwfTt": {
-          "type": "collection",
-          "settings": {
-            "collection": "rasna-fruit-preparation-rs-5-stick-pack",
-            "heading": "",
-            "subheading": ""
-          }
-        },
         "collection_mqMLEX": {
           "type": "collection",
           "settings": {
@@ -164,14 +104,12 @@
       },
       "block_order": [
         "collection_X8TPJF",
-        "collection_iJcM9f",
         "collection_FqjRUA",
+        "collection_iJcM9f",
         "collection_wGUTLq",
         "collection_X4UfMC",
         "collection_6cz7Ng",
         "collection_PiaL8J",
-        "collection_inj6qr",
-        "collection_wTwfTt",
         "collection_mqMLEX"
       ],
       "name": "CAIT Multiple Collections",
@@ -200,7 +138,6 @@
   "order": [
     "main",
     "collection_banner_custom_kWh7dD",
-    "rich_text_diaf9B",
     "collection_multi_list_WAmVP9"
   ]
 }

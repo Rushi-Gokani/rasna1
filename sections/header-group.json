@@ -33,6 +33,7 @@
         "item_jepx4W",
         "item_RDf9cy"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-announcement-bar__container {--container-width: 600px;}"
       ],
@@ -72,7 +73,9 @@
       "block_order": [
         "5e153016-a9d7-46c9-a10e-30d16446793d"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".m-product-text {color: #e85722; /* orange background */ color: #e85722; /* white text */ font-weight: bold; /* bold text */ padding: 6px 12px; /* optional spacing */ border-radius: 4px; /* optional rounded corners */ display: inline-block; /* so background wraps text nicely */ font-size: 20px;}"
+      ],
       "settings": {
         "color_scheme": "",
         "color_scheme_menu": "",
@@ -101,7 +104,7 @@
         "show_wishlist_icon": false,
         "show_compare_icon": false,
         "show_custom_menu": true,
-        "custom_menu_text": "Exclusive for  CAIT Members",
+        "custom_menu_text": "Exclusive For CAIT Members",
         "custom_menu_url": "shopify://pages/cait",
         "custom_menu_icon": "none",
         "show_currency_switcher": false,
@@ -111,10 +114,50 @@
         "mb_show_country_selector": false,
         "mb_show_language_switcher": false
       }
+    },
+    "annoucement_jr3LrX": {
+      "type": "annoucement",
+      "blocks": {
+        "item_TwDfhr": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "message": "Rasna Gst Bachat Utsav",
+            "message_link": ""
+          }
+        },
+        "item_P3ntmk": {
+          "type": "item",
+          "settings": {
+            "message": "SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000",
+            "message_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_TwDfhr",
+        "item_P3ntmk"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".m-announcement-bar__container {--container-width: 600px;}"
+      ],
+      "settings": {
+        "container": "w-full",
+        "color_scheme": "dark",
+        "show_announcement": true,
+        "homepage_only": true,
+        "show_close": false,
+        "show_divider": false,
+        "show_nav": false,
+        "autorotate": false,
+        "autorotate_speed": 3
+      }
     }
   },
   "order": [
     "annoucement",
-    "header"
+    "header",
+    "annoucement_jr3LrX"
   ]
 }

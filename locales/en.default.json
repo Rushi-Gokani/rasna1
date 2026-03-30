@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "404": {
@@ -167,7 +176,8 @@
       "delivery_title": "Delivery",
       "delivery_time": "Delivery time",
       "delivery_label": "Pick a delivery date:",
-      "delivery_error": "Please choose the current or future time."
+      "delivery_error": "Please choose the current or future time.",
+      "return_policy": "Once an order is placed, it cannot be canceled."
     },
     "label": {
       "product": "Product",

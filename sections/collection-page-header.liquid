@@ -69,6 +69,10 @@
     assign lazy_load = 'lazy'
   endunless
   assign alt_image = bg_image.alt | default: 'collection-banner-image'
+  assign collection_title = collection.title
+  if collection.title == 'Rasna Rich'
+    assign collection_title = 'Rasna Insta Nutri +'
+  endif
 %}
 {% if enable_parallax %}
   <script src="{{ 'parallax.js' | asset_url }}" defer="defer"></script>
@@ -136,7 +140,7 @@
             %}
           {% endif %}
           <h1 class="m-collection-page-header__title h2 {{ heading_color }}{% if section.settings.upper_title %} m:uppercase{% else %} m:capitalize{% endif %}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-            {{ collection.title }}
+            {{ collection_title }}
           </h1>
           {% if section.settings.show_desc and collection_desc != blank %}
             <div class="m-collection-page-header__description rte {{ desc_color }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">

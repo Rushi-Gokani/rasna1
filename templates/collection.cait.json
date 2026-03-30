@@ -28,6 +28,31 @@
         "enable_bg_zoom_effect": true
       }
     },
+    "rich_text_6cm7Yt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_BxVFUd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SPECIAL FESTIVE OFFER FOR CAIT MEMBERS: FREE SHIPPING ON ORDERS ABOVE ₹ 1000</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_BxVFUd"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "container": "container",
+        "color_scheme": "",
+        "content_alignment": "center",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "main": {
       "type": "main-collection-product-grid",
       "blocks": {
@@ -108,6 +133,7 @@
   },
   "order": [
     "collection-header",
+    "rich_text_6cm7Yt",
     "main",
     "recent-viewed"
   ]

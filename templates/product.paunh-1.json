@@ -20,7 +20,7 @@
       }
     },
     "main": {
-      "type": "main-product",
+      "type": "main-product-copy",
       "blocks": {
         "badge_ChqgGj": {
           "type": "badge",
@@ -39,9 +39,15 @@
         },
         "text_MwBw6V": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "RASNA GST BACHAT UTSAV",
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
+            "text_style": "body"
+          }
+        },
+        "text_AbjELF": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.minimum_order.value }}",
             "text_style": "body"
           }
         },
@@ -135,6 +141,7 @@
         "title",
         "custom_text_MRNttg",
         "text_MwBw6V",
+        "text_AbjELF",
         "price",
         "variant_picker",
         "buy_buttons",
@@ -147,9 +154,7 @@
         "collapsible_tab_RFfJg7",
         "salepify_free_gift_block_rwwDJd"
       ],
-      "custom_css": [
-        ".m-product-text {background-color: #e85722; /* orange background */ color: white; /* white text */ font-weight: bold; /* bold text */ padding: 6px 12px; /* optional spacing */ border-radius: 4px; /* optional rounded corners */ display: inline-block; /* so background wraps text nicely */}"
-      ],
+      "custom_css": [],
       "settings": {
         "container": "container",
         "layout": "layout-4",
@@ -192,6 +197,7 @@
         "description",
         "tab"
       ],
+      "disabled": true,
       "custom_css": [
         ".m-tabs__header {justify-content: flex-start;}"
       ],

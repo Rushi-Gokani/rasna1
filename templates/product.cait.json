@@ -40,14 +40,14 @@
         "text_MwBw6V": {
           "type": "text",
           "settings": {
-            "text": "Carton Size 200 pcs",
+            "text": "{{ product.metafields.custom.product_carton_size.value }}",
             "text_style": "body"
           }
         },
         "text_AbjELF": {
           "type": "text",
           "settings": {
-            "text": "Minimum Order Quantity Saleable pack -10",
+            "text": "{{ product.metafields.custom.minimum_order.value }}",
             "text_style": "body"
           }
         },
@@ -87,6 +87,7 @@
         },
         "shipping_VBJFtx": {
           "type": "shipping",
+          "disabled": true,
           "settings": {
             "show_delivery_times": true,
             "deliver_text": "Estimated Delivery:",

@@ -123,6 +123,13 @@
   #m-collection-multi-list-{{ section.id }} .m-collection-multi-list__footer .m-button {
     min-width: 180px;
   }
+
+  /* Prevent product images from being cropped */
+  #m-collection-multi-list-{{ section.id }} .m-product-card__media img,
+  #m-collection-multi-list-{{ section.id }} .m-image img,
+  #m-collection-multi-list-{{ section.id }} responsive-image img {
+    object-fit: contain !important;
+  }
 {% endstyle %}
 
 {% schema %}

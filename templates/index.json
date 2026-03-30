@@ -401,6 +401,7 @@
     },
     "featured_collection_wMwY7C": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "Featured collection",
       "settings": {
         "heading": "Shop RASNA Products",

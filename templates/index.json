@@ -1182,7 +1182,7 @@
         "header_alignment": "center",
         "color_scheme": "",
         "container": "container-fluid",
-        "collection": "all-new-product-collection",
+        "collection": "product",
         "items_per_row": 4,
         "item_gap": 30,
         "pcard_layout": "",

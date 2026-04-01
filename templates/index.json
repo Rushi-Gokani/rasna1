@@ -257,6 +257,7 @@
     },
     "featured_product_XFLwen": {
       "type": "featured-product",
+      "disabled": true,
       "custom_css": [
         ".m-product-text {background-color: #e85722; /* orange background */ color: white; /* white text */ font-weight: bold; /* bold text */ margin-top: 10px; margin-bottom: 10px; padding: 6px 12px; /* optional spacing */ border-radius: 4px; /* optional rounded corners */ display: inline-block; /* so background wraps text nicely */}"
       ],

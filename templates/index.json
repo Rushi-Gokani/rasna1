@@ -189,7 +189,7 @@
         "collection": "jumpin-ready-to-drink",
         "enable_flashsale": false,
         "show_countdown": false,
-        "product_to_show": 4,
+        "product_to_show": 5,
         "items_per_row": 4,
         "item_gap": 36,
         "pcard_layout": "",

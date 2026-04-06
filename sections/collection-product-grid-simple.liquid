@@ -1,0 +1,385 @@
+{{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-inventory.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign current_collection = collections[section.settings.collection]
+  assign items_per_row = section.settings.items_per_row
+  assign container = section.settings.container
+  if container == 'w-full'
+    assign container = 'container-full'
+  endif
+
+  assign animation_effect = settings.animations
+  assign animated = false
+  if animation_effect != 'none'
+    assign animated = true
+    if section.settings.animations != 'inherit'
+      assign animation_effect = section.settings.animations
+    endif
+  endif
+
+  assign card_style = section.settings.pcard_layout
+  if card_style == null or card_style == blank
+    assign card_style = settings.pcard_layout
+  endif
+  assign image_ratio = section.settings.pcard_image_ratio
+  assign show_vendor = section.settings.show_vendor
+  assign hide_title = section.settings.hide_title
+%}
+
+<style>
+  #m-section--{{ section.id }} {
+    --column-gap: {{ section.settings.item_gap }}px;
+    --column-gap-mobile: {{ section.settings.item_gap_mobile }}px;
+    --row-gap: {{ section.settings.item_gap | plus: 10 }}px;
+    --row-gap-mobile: 30px;
+    --items: {{ items_per_row }};
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+</style>
+
+<section
+  id="m-section--{{ section.id }}"
+  class="m-section m-collection-product-grid-simple m-gradient m-color-{{ section.settings.color_scheme }}"
+>
+  <div class="{{ container }} m-section-my m-section-py">
+    {% if section.settings.heading != blank %}
+      <div class="m-section__header m:text-{{ section.settings.header_alignment }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+        <h2 class="m-section__heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+        {% if section.settings.subheading != blank %}
+          <div class="m-section__subheading">{{ section.settings.subheading }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="m-product-list">
+      <div class="m-mixed-layout__inner m:grid m-cols-{{ items_per_row }} m:grid-2-cols md:m:grid-{{ items_per_row | divided_by: 2.0 | ceil }}-cols lg:m:grid-3-cols xl:m:grid-{{ items_per_row }}-cols">
+        {% if current_collection != blank %}
+          {% for product in current_collection.products %}
+            <div class="m:column">
+              {% liquid
+                case card_style
+                  when '1'
+                    render 'product-card-1', product: product, image_ratio: image_ratio, show_vendor: show_vendor, hide_title: hide_title, index: forloop.index, animated: animated, animation_effect: animation_effect
+                  when '2'
+                    render 'product-card-2', product: product, image_ratio: image_ratio, show_vendor: show_vendor, hide_title: hide_title, index: forloop.index, animated: animated, animation_effect: animation_effect
+                  when '3'
+                    render 'product-card-3', product: product, image_ratio: image_ratio, show_vendor: show_vendor, hide_title: hide_title, index: forloop.index, animated: animated, animation_effect: animation_effect
+                  when '4'
+                    render 'product-card-4', product: product, image_ratio: image_ratio, show_vendor: show_vendor, hide_title: hide_title, index: forloop.index, animated: animated, animation_effect: animation_effect
+                  when '5'
+                    render 'product-card-5', product: product, image_ratio: image_ratio, show_vendor: show_vendor, hide_title: hide_title, index: forloop.index, animated: animated, animation_effect: animation_effect
+                  else
+                    render 'product-card-1', product: product, image_ratio: image_ratio, show_vendor: show_vendor, hide_title: hide_title, index: forloop.index, animated: animated, animation_effect: animation_effect
+                endcase
+              %}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% for i in (1..items_per_row) %}
+            <div class="m:column m:text-{{ settings.pcard_alignment }}">
+              <div
+                class="m-product-card m-product-card--placeholder{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}"
+                {% if animated %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                <div class="m-product-card__media" style="--aspect-ratio: 1/1;">
+                  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                  {{
+                    'product-'
+                    | append: current
+                    | placeholder_svg_tag: 'm-placeholder-svg m:object-cover m:w-full m:h-full'
+                  }}
+                </div>
+                <div class="m-product-card__name{% if settings.uppercase_prd_name %} m:uppercase{% endif %}">
+                  {{ 'homepage.onboarding.product_title' | t }}
+                </div>
+                <div class="m-product-card__price">
+                  <p class="m-price">$19.99</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Simple collection grid",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Collection products"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h3",
+      "options": [
+        {
+          "label": "Medium",
+          "value": "h3"
+        },
+        {
+          "label": "Large",
+          "value": "h2"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container type",
+      "default": "container-fluid",
+      "options": [
+        {
+          "value": "container-fluid",
+          "label": "Default"
+        },
+        {
+          "value": "w-full",
+          "label": "Full width"
+        },
+        {
+          "value": "container",
+          "label": "Use container box"
+        }
+      ]
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "header",
+      "content": "Grid settings"
+    },
+    {
+      "type": "range",
+      "id": "items_per_row",
+      "label": "Products per row",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "label": "Column gap",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Product card settings"
+    },
+    {
+      "type": "select",
+      "id": "pcard_layout",
+      "label": "Design layout",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Use global settings"
+        },
+        {
+          "value": "1",
+          "label": "Style 1"
+        },
+        {
+          "value": "2",
+          "label": "Style 2"
+        },
+        {
+          "value": "3",
+          "label": "Style 3"
+        },
+        {
+          "value": "4",
+          "label": "Style 4"
+        },
+        {
+          "value": "5",
+          "label": "Style 5"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "pcard_image_ratio",
+      "label": "Image aspect ratio",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Use global settings"
+        },
+        {
+          "value": "original",
+          "label": "Original aspect ratio"
+        },
+        {
+          "value": "1/1",
+          "label": "1:1"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3"
+        },
+        {
+          "value": "16/9",
+          "label": "16:9"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show product vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_title",
+      "label": "Hide product title",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Mobile settings"
+    },
+    {
+      "type": "range",
+      "id": "item_gap_mobile",
+      "label": "Column gap",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Animations"
+    },
+    {
+      "type": "select",
+      "id": "animations",
+      "label": "Visible in the view animation",
+      "default": "inherit",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Inherit global setting"
+        },
+        {
+          "value": "fade-in",
+          "label": "Fade in"
+        },
+        {
+          "value": "fade-in-up",
+          "label": "Fade in up"
+        },
+        {
+          "value": "fade-in-left",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fade-in-right",
+          "label": "Fade in right"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Simple collection grid",
+      "settings": {
+        "heading": "Collection products"
+      }
+    }
+  ]
+}
+{% endschema %}

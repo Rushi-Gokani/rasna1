@@ -103,7 +103,7 @@
         "show_cart_icon": true,
         "show_wishlist_icon": false,
         "show_compare_icon": false,
-        "show_custom_menu": true,
+        "show_custom_menu": false,
         "custom_menu_text": "Exclusive For CAIT Members",
         "custom_menu_url": "shopify://pages/cait",
         "custom_menu_icon": "none",

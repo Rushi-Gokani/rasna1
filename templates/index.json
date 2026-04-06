@@ -179,6 +179,46 @@
       "type": "featured-collection",
       "custom_css": [],
       "settings": {
+        "heading": "Jumpin Ready To Drink",
+        "heading_size": "h2",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "color_scheme": "",
+        "container": "container-fluid",
+        "collection": "jumpin-ready-to-drink",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 5,
+        "items_per_row": 4,
+        "item_gap": 36,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "show_button_on_header": false,
+        "button_type": "link",
+        "button_text": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "infinite_load": false,
+        "max_page_load": 3,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "featured_collection_qTTMf9": {
+      "type": "featured-collection",
+      "custom_css": [],
+      "settings": {
         "heading": "Did you Try the Yummy RASNA INSTA NUTRI +?",
         "heading_size": "h2",
         "subheading": "",
@@ -217,6 +257,7 @@
     },
     "featured_product_XFLwen": {
       "type": "featured-product",
+      "disabled": true,
       "custom_css": [
         ".m-product-text {background-color: #e85722; /* orange background */ color: white; /* white text */ font-weight: bold; /* bold text */ margin-top: 10px; margin-bottom: 10px; padding: 6px 12px; /* optional spacing */ border-radius: 4px; /* optional rounded corners */ display: inline-block; /* so background wraps text nicely */}"
       ],
@@ -396,6 +437,47 @@
         "padding_top": 100,
         "padding_bottom": 100,
         "custom_class": "sf-home__product-tab",
+        "animations": "inherit"
+      }
+    },
+    "featured_collection_wMwY7C": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "Featured collection",
+      "settings": {
+        "heading": "Shop RASNA Products",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "color_scheme": "",
+        "container": "container-fluid",
+        "collection": "all-products-collection",
+        "enable_flashsale": false,
+        "show_countdown": false,
+        "product_to_show": 12,
+        "items_per_row": 6,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "enable_slider": true,
+        "show_pagination": false,
+        "show_navigation": false,
+        "show_button_on_header": false,
+        "button_type": "link",
+        "button_text": "Shop more",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "infinite_load": true,
+        "max_page_load": 5,
+        "mobile_disable_slider": false,
+        "use_scroll_mobile": true,
+        "item_gap_mobile": 16,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_class": "",
         "animations": "inherit"
       }
     },
@@ -1090,14 +1172,39 @@
         "custom_class": "",
         "animations": "inherit"
       }
+    },
+    "collection_product_grid_simple_ddTyNd": {
+      "type": "collection-product-grid-simple",
+      "name": "Simple collection grid",
+      "settings": {
+        "heading": "Rasna All Products",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
+        "color_scheme": "",
+        "container": "container-fluid",
+        "collection": "product",
+        "items_per_row": 4,
+        "item_gap": 30,
+        "pcard_layout": "",
+        "pcard_image_ratio": "",
+        "show_vendor": false,
+        "hide_title": false,
+        "item_gap_mobile": 16,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "animations": "inherit"
+      }
     }
   },
   "order": [
     "1621243260e1af0c20",
     "featured_collection_Knh6nh",
+    "featured_collection_qTTMf9",
     "featured_product_XFLwen",
     "16225316461d1cff80",
     "162251092958fcda7c",
+    "featured_collection_wMwY7C",
     "7ea56e8d-5794-4708-8812-8ee9604a3a21",
     "scrolling_promotion_jjrFyf",
     "collection_tabs_QE4TLj",
@@ -1108,6 +1215,7 @@
     "custom_content_hh6hmV",
     "testimonials_pnyUnX",
     "11cfb44f-b725-4daf-8ee7-4bbf2c63914d",
-    "new_featured_product_CHb4MN"
+    "new_featured_product_CHb4MN",
+    "collection_product_grid_simple_ddTyNd"
   ]
 }

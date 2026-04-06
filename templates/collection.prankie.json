@@ -55,35 +55,6 @@
         "animations": "inherit"
       }
     },
-    "two_images_PHUtCx": {
-      "type": "two-images",
-      "custom_css": [
-        ".m-two-images__heading{padding-top: 15px;}"
-      ],
-      "name": "Two Images",
-      "settings": {
-        "container": "container-fluid",
-        "color_scheme": "",
-        "heading": "",
-        "heading_size": "h3",
-        "image_1_heading": "Rasna Nutri+ 32 Glasses Pack : Including Fruit Beverage Mix & Flavoured Drink Mix",
-        "image_1": "shopify://shop_images/rasn1231.png",
-        "image_1_link": "",
-        "image_1_width": "50",
-        "image_2_heading": "Rasna Insta Nutri+ 500g Pack : Instant Fruit Beverage Mix",
-        "image_2": "shopify://shop_images/Rasna1981.png",
-        "image_2_link": "",
-        "image_2_width": "50",
-        "heading_font_size": 18,
-        "image_gap": 18,
-        "image_gap_mobile": 10,
-        "mobile_layout": "stack",
-        "padding_top": 68,
-        "padding_bottom": 28,
-        "custom_class": "",
-        "animations": "inherit"
-      }
-    },
     "main": {
       "type": "main-collection-product-grid",
       "blocks": {
@@ -134,6 +105,35 @@
         "color_swatches_design": "list"
       }
     },
+    "two_images_PHUtCx": {
+      "type": "two-images",
+      "custom_css": [
+        ".m-two-images__heading {padding-top: 15px;}"
+      ],
+      "name": "Two Images",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h3",
+        "image_1_heading": "Rasna Nutri+ 32 Glasses Pack : Including Fruit Beverage Mix & Flavoured Drink Mix",
+        "image_1": "shopify://shop_images/rasn1231.png",
+        "image_1_link": "",
+        "image_1_width": "50",
+        "image_2_heading": "Rasna Insta Nutri+ 500g Pack : Instant Fruit Beverage Mix",
+        "image_2": "shopify://shop_images/Rasna1981.png",
+        "image_2_link": "",
+        "image_2_width": "50",
+        "heading_font_size": 18,
+        "image_gap": 18,
+        "image_gap_mobile": 10,
+        "mobile_layout": "stack",
+        "padding_top": 68,
+        "padding_bottom": 28,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "recent-viewed": {
       "type": "recent-viewed-products",
       "settings": {
@@ -165,8 +165,8 @@
   "order": [
     "collection-header",
     "two_images_4NmznM",
-    "two_images_PHUtCx",
     "main",
+    "two_images_PHUtCx",
     "recent-viewed"
   ]
 }

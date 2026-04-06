@@ -80,7 +80,7 @@
   }
 {%- endstyle -%}
 
-<section id="m-section-{{ section.id }}" class="m-section m-two-images m-gradient m-color-{{ section.settings.color_scheme }} {{ section.settings.custom_class }}">
+<section id="m-section-{{ section.id }}" class="m-section m-two-images m-section-{{ section.id }} m-gradient m-color-{{ section.settings.color_scheme }} {{ section.settings.custom_class }}">
   <div class="{{ section.settings.container }} m-section-my m-section-py">
     {% if section.settings.heading != blank %}
       <div class="m-section__header m:text-center{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">

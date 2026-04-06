@@ -30,6 +30,7 @@
     },
     "two_images_4NmznM": {
       "type": "two-images",
+      "disabled": true,
       "name": "Two Images",
       "settings": {
         "container": "container-full",
@@ -38,11 +39,11 @@
         "heading_size": "h3",
         "image_1": "shopify://shop_images/rasn1231.png",
         "image_1_link": "",
-        "image_1_width": "25",
+        "image_1_width": "40",
         "image_2": "shopify://shop_images/Rasna1981.png",
         "image_2_link": "",
         "image_2_width": "50",
-        "image_gap": 32,
+        "image_gap": 54,
         "image_gap_mobile": 10,
         "mobile_layout": "stack",
         "padding_top": 148,

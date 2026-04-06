@@ -80,7 +80,7 @@
   }
 {%- endstyle -%}
 
-<section id="m-section-{{ section.id }}" class="m-section m-two-images m-section-{{ section.id }} m-gradient m-color-{{ section.settings.color_scheme }} {{ section.settings.custom_class }}">
+<section id="m-section-{{ section.id }}" class="m-section m-two-images m-gradient m-color-{{ section.settings.color_scheme }} {{ section.settings.custom_class }}">
   <div class="{{ section.settings.container }} m-section-my m-section-py">
     {% if section.settings.heading != blank %}
       <div class="m-section__header m:text-center{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
@@ -92,7 +92,7 @@
       <div class="m-two-images__container">
         <div class="m-two-images__image m-two-images__image--first">
           {% if section.settings.image_1_heading != blank %}
-            <h3 class="m-two-images__heading m-two-images__heading--first">{{ section.settings.image_1_heading }}</h3>
+            <h3 class="m-two-images__heading m-two-images__heading--first m:text-center">{{ section.settings.image_1_heading }}</h3>
           {% endif %}
           {% if section.settings.image_1 != blank %}
             {% if section.settings.image_1_link != blank %}<a href="{{ section.settings.image_1_link }}">{% endif %}
@@ -107,7 +107,7 @@
 
         <div class="m-two-images__image m-two-images__image--second">
           {% if section.settings.image_2_heading != blank %}
-            <h3 class="m-two-images__heading m-two-images__heading--second">{{ section.settings.image_2_heading }}</h3>
+            <h3 class="m-two-images__heading m-two-images__heading--second m:text-center">{{ section.settings.image_2_heading }}</h3>
           {% endif %}
           {% if section.settings.image_2 != blank %}
             {% if section.settings.image_2_link != blank %}<a href="{{ section.settings.image_2_link }}">{% endif %}

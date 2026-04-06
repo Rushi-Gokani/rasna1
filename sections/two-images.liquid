@@ -10,11 +10,6 @@
 %}
 
 {%- style -%}
-  {% comment %} 
-    We keep the original style block but we use it sparingly to avoid layout shifts.
-    The section's internal CSS uses '.m-section-{{ section.id }}' which was missing in the original HTML.
-    We'll continue to keep it separate or use inline styles to preserve your UI.
-  {% endcomment %}
   .m-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -84,10 +79,18 @@
       <div class="m-two-images__container">
         {% for block in section.blocks %}
           {% capture block_class %}m-two-images__image {% if forloop.first %}m-two-images__image--first{% else %}m-two-images__image--second{% endif %}{% endcapture %}
+          {% liquid
+            assign current_width = block.settings.width
+            if forloop.first
+                assign current_width = section.settings.image_1_width
+            elsif forloop.index == 2
+                assign current_width = section.settings.image_2_width
+            endif
+          %}
           <div 
             id="m-block-{{ block.id }}" 
             class="{{ block_class }}" 
-            style="flex: 0 0 calc({{ block.settings.width }}% - (var(--image-gap, 20px) / 2)); max-width: calc({{ block.settings.width }}% - (var(--image-gap, 20px) / 2)); padding-top: {{ block.settings.padding_top }}px; padding-bottom: {{ block.settings.padding_bottom }}px;"
+            style="flex: 0 0 calc({{ current_width }}% - (var(--image-gap, 20px) / 2)); max-width: calc({{ current_width }}% - (var(--image-gap, 20px) / 2)); padding-top: {{ block.settings.padding_top }}px; padding-bottom: {{ block.settings.padding_bottom }}px;"
             {{ block.shopify_attributes }}
           >
             {% if block.settings.heading != blank %}
@@ -162,26 +165,49 @@
       "label": "Heading size",
       "default": "h3",
       "options": [
-        {
-          "label": "Extra small",
-          "value": "h5"
-        },
-        {
-          "label": "Small",
-          "value": "h4"
-        },
-        {
-          "label": "Medium",
-          "value": "h3"
-        },
-        {
-          "label": "Large",
-          "value": "h2"
-        },
-        {
-          "label": "Extra large",
-          "value": "h1"
-        }
+        { "label": "Extra small", "value": "h5" },
+        { "label": "Small", "value": "h4" },
+        { "label": "Medium", "value": "h3" },
+        { "label": "Large", "value": "h2" },
+        { "label": "Extra large", "value": "h1" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image 1 Width"
+    },
+    {
+      "type": "select",
+      "id": "image_1_width",
+      "label": "First image width",
+      "default": "50",
+      "options": [
+        { "value": "25", "label": "25%" },
+        { "value": "33", "label": "33%" },
+        { "value": "40", "label": "40%" },
+        { "value": "50", "label": "50%" },
+        { "value": "60", "label": "60%" },
+        { "value": "67", "label": "67%" },
+        { "value": "75", "label": "75%" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image 2 Width"
+    },
+    {
+      "type": "select",
+      "id": "image_2_width",
+      "label": "Second image width",
+      "default": "50",
+      "options": [
+        { "value": "25", "label": "25%" },
+        { "value": "33", "label": "33%" },
+        { "value": "40", "label": "40%" },
+        { "value": "50", "label": "50%" },
+        { "value": "60", "label": "60%" },
+        { "value": "67", "label": "67%" },
+        { "value": "75", "label": "75%" }
       ]
     },
     {
@@ -224,14 +250,8 @@
       "label": "Mobile layout",
       "default": "stack",
       "options": [
-        {
-          "value": "stack",
-          "label": "Stack vertically"
-        },
-        {
-          "value": "inline",
-          "label": "Side by side"
-        }
+        { "value": "stack", "label": "Stack vertically" },
+        { "value": "inline", "label": "Side by side" }
       ]
     },
     {
@@ -277,26 +297,11 @@
       "label": "Visible in the view animation",
       "default": "inherit",
       "options": [
-        {
-          "value": "inherit",
-          "label": "Inherit global setting"
-        },
-        {
-          "value": "fade-in",
-          "label": "Fade in"
-        },
-        {
-          "value": "fade-in-up",
-          "label": "Fade in up"
-        },
-        {
-          "value": "fade-in-left",
-          "label": "Fade in left"
-        },
-        {
-          "value": "fade-in-right",
-          "label": "Fade in right"
-        }
+        { "value": "inherit", "label": "Inherit global setting" },
+        { "value": "fade-in", "label": "Fade in" },
+        { "value": "fade-in-up", "label": "Fade in up" },
+        { "value": "fade-in-left", "label": "Fade in left" },
+        { "value": "fade-in-right", "label": "Fade in right" }
       ]
     }
   ],
@@ -321,22 +326,6 @@
           "type": "url",
           "id": "link",
           "label": "Link"
-        },
-        {
-          "type": "select",
-          "id": "width",
-          "label": "Width",
-          "default": "50",
-          "options": [
-            { "value": "25", "label": "25%" },
-            { "value": "33", "label": "33%" },
-            { "value": "40", "label": "40%" },
-            { "value": "50", "label": "50%" },
-            { "value": "60", "label": "60%" },
-            { "value": "67", "label": "67%" },
-            { "value": "75", "label": "75%" },
-            { "value": "100", "label": "100%" }
-          ]
         },
         {
           "type": "header",

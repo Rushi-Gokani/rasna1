@@ -15,6 +15,7 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     --image-gap: {{ section.settings.image_gap }}px;
     --image-gap-mobile: {{ section.settings.image_gap_mobile }}px;
+    --heading-font-size: {{ section.settings.heading_font_size }}px;
   }
 
   .m-section-{{ section.id }} .m-two-images__wrapper {
@@ -43,6 +44,19 @@
     height: auto;
     display: block;
     object-fit: cover;
+  }
+
+  .m-section-{{ section.id }} .m-two-images__heading {
+    margin: 0 0 12px 0;
+    font-size: var(--heading-font-size, 18px);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--m-color-text);
+  }
+
+  .m-section-{{ section.id }} .m-two-images__image a {
+    display: block;
+    width: 100%;
   }
 
   @media (max-width: 767px) {
@@ -77,6 +91,9 @@
     <div class="m-two-images__wrapper{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
       <div class="m-two-images__container">
         <div class="m-two-images__image m-two-images__image--first">
+          {% if section.settings.image_1_heading != blank %}
+            <h3 class="m-two-images__heading m-two-images__heading--first">{{ section.settings.image_1_heading }}</h3>
+          {% endif %}
           {% if section.settings.image_1 != blank %}
             {% if section.settings.image_1_link != blank %}<a href="{{ section.settings.image_1_link }}">{% endif %}
             {% render 'responsive-image', image: section.settings.image_1, image_class: 'm:w-full m:h-full' %}
@@ -89,6 +106,9 @@
         </div>
 
         <div class="m-two-images__image m-two-images__image--second">
+          {% if section.settings.image_2_heading != blank %}
+            <h3 class="m-two-images__heading m-two-images__heading--second">{{ section.settings.image_2_heading }}</h3>
+          {% endif %}
           {% if section.settings.image_2 != blank %}
             {% if section.settings.image_2_link != blank %}<a href="{{ section.settings.image_2_link }}">{% endif %}
             {% render 'responsive-image', image: section.settings.image_2, image_class: 'm:w-full m:h-full' %}
@@ -184,6 +204,12 @@
       "content": "Image 1"
     },
     {
+      "type": "text",
+      "id": "image_1_heading",
+      "label": "First image heading",
+      "default": "Image Heading"
+    },
+    {
       "type": "image_picker",
       "id": "image_1",
       "label": "First image"
@@ -234,6 +260,12 @@
       "content": "Image 2"
     },
     {
+      "type": "text",
+      "id": "image_2_heading",
+      "label": "Second image heading",
+      "default": "Image Heading"
+    },
+    {
       "type": "image_picker",
       "id": "image_2",
       "label": "Second image"
@@ -282,6 +314,16 @@
     {
       "type": "header",
       "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size",
+      "label": "Heading font size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
     },
     {
       "type": "range",

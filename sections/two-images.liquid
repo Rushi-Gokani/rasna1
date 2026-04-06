@@ -21,19 +21,21 @@
 
   #m-section-{{ section.id }} .m-two-images__container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--image-gap, 20px);
     width: 100%;
+    margin: 0 auto;
+    max-width: 1200px; /* Optional: adjust as needed */
   }
 
   #m-section-{{ section.id }} .m-two-images__image--first {
-    flex: 0 0 calc({{ section.settings.image_1_width }}% - (var(--image-gap, 20px) / 2));
-    max-width: calc({{ section.settings.image_1_width }}% - (var(--image-gap, 20px) / 2));
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   #m-section-{{ section.id }} .m-two-images__image--second {
-    flex: 0 0 calc({{ section.settings.image_2_width }}% - (var(--image-gap, 20px) / 2));
-    max-width: calc({{ section.settings.image_2_width }}% - (var(--image-gap, 20px) / 2));
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   #m-section-{{ section.id }} .m-two-images__image img {
@@ -44,7 +46,7 @@
   }
 
   #m-section-{{ section.id }} .m-two-images__heading {
-    margin: 0 0 12px 0;
+    margin: 0 0 16px 0;
     font-size: {{ section.settings.heading_font_size }}px;
     font-weight: 600;
     line-height: 1.4;
@@ -59,22 +61,8 @@
 
   @media (max-width: 767px) {
     #m-section-{{ section.id }} .m-two-images__container {
-      gap: var(--image-gap-mobile, 10px);
+      gap: var(--image-gap-mobile, 16px);
     }
-
-    {% if section.settings.mobile_layout == 'stack' %}
-    #m-section-{{ section.id }} .m-two-images__image--first,
-    #m-section-{{ section.id }} .m-two-images__image--second {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-    {% else %}
-    #m-section-{{ section.id }} .m-two-images__image--first,
-    #m-section-{{ section.id }} .m-two-images__image--second {
-      flex: 1;
-      max-width: calc(50% - (var(--image-gap-mobile, 10px) / 2));
-    }
-    {% endif %}
   }
 {%- endstyle -%}
 

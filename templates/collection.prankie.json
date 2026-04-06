@@ -57,6 +57,9 @@
     },
     "two_images_PHUtCx": {
       "type": "two-images",
+      "custom_css": [
+        ".m-two-images__heading{padding-top: 15px;}"
+      ],
       "name": "Two Images",
       "settings": {
         "container": "container-fluid",
@@ -72,10 +75,10 @@
         "image_2_link": "",
         "image_2_width": "50",
         "heading_font_size": 18,
-        "image_gap": 20,
+        "image_gap": 18,
         "image_gap_mobile": 10,
         "mobile_layout": "stack",
-        "padding_top": 56,
+        "padding_top": 68,
         "padding_bottom": 28,
         "custom_class": "",
         "animations": "inherit"

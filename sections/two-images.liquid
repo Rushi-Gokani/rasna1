@@ -28,6 +28,16 @@
     width: 100%;
   }
 
+  .m-section-{{ section.id }} .m-two-images__image--first {
+    flex: 0 0 calc({{ section.settings.image_1_width }}% - (var(--image-gap, 20px) / 2));
+    max-width: calc({{ section.settings.image_1_width }}% - (var(--image-gap, 20px) / 2));
+  }
+
+  .m-section-{{ section.id }} .m-two-images__image--second {
+    flex: 0 0 calc({{ section.settings.image_2_width }}% - (var(--image-gap, 20px) / 2));
+    max-width: calc({{ section.settings.image_2_width }}% - (var(--image-gap, 20px) / 2));
+  }
+
   .m-section-{{ section.id }} .m-two-images__image img {
     width: 100%;
     height: auto;
@@ -41,6 +51,7 @@
     font-weight: 600;
     line-height: 1.4;
     color: var(--m-color-text);
+    text-align: center;
   }
 
   .m-section-{{ section.id }} .m-two-images__image a {
@@ -54,12 +65,14 @@
     }
 
     {% if section.settings.mobile_layout == 'stack' %}
-    .m-section-{{ section.id }} .m-two-images__image {
-      flex: 1 1 100% !important;
-      max-width: 100% !important;
+    .m-section-{{ section.id }} .m-two-images__image--first,
+    .m-section-{{ section.id }} .m-two-images__image--second {
+      flex: 1 1 100%;
+      max-width: 100%;
     }
     {% else %}
-    .m-section-{{ section.id }} .m-two-images__image {
+    .m-section-{{ section.id }} .m-two-images__image--first,
+    .m-section-{{ section.id }} .m-two-images__image--second {
       flex: 1;
       max-width: calc(50% - (var(--image-gap-mobile, 10px) / 2));
     }
@@ -77,36 +90,35 @@
 
     <div class="m-two-images__wrapper{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
       <div class="m-two-images__container">
-        {% for block in section.blocks %}
-          {% capture block_class %}m-two-images__image {% if forloop.first %}m-two-images__image--first{% else %}m-two-images__image--second{% endif %}{% endcapture %}
-          {% liquid
-            assign current_width = block.settings.width
-            if forloop.first
-                assign current_width = section.settings.image_1_width
-            elsif forloop.index == 2
-                assign current_width = section.settings.image_2_width
-            endif
-          %}
-          <div 
-            id="m-block-{{ block.id }}" 
-            class="{{ block_class }}" 
-            style="flex: 0 0 calc({{ current_width }}% - (var(--image-gap, 20px) / 2)); max-width: calc({{ current_width }}% - (var(--image-gap, 20px) / 2)); padding-top: {{ block.settings.padding_top }}px; padding-bottom: {{ block.settings.padding_bottom }}px;"
-            {{ block.shopify_attributes }}
-          >
-            {% if block.settings.heading != blank %}
-              <h3 class="m-two-images__heading m:text-center">{{ block.settings.heading }}</h3>
-            {% endif %}
-            {% if block.settings.image != blank %}
-              {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
-              {% render 'responsive-image', image: block.settings.image, image_class: 'm:w-full m:h-full' %}
-              {% if block.settings.link != blank %}</a>{% endif %}
-            {% else %}
-              <div class="m-two-images__placeholder" style="padding: 20px; background: #f4f4f4;">
-                {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg' }}
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
+        <div class="m-two-images__image m-two-images__image--first">
+          {% if section.settings.image_1_heading != blank %}
+            <h3 class="m-two-images__heading m-two-images__heading--first m:text-center">{{ section.settings.image_1_heading }}</h3>
+          {% endif %}
+          {% if section.settings.image_1 != blank %}
+            {% if section.settings.image_1_link != blank %}<a href="{{ section.settings.image_1_link }}">{% endif %}
+            {% render 'responsive-image', image: section.settings.image_1, image_class: 'm:w-full m:h-full' %}
+            {% if section.settings.image_1_link != blank %}</a>{% endif %}
+          {% else %}
+            <div class="m-two-images__placeholder">
+              {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg' }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="m-two-images__image m-two-images__image--second">
+          {% if section.settings.image_2_heading != blank %}
+            <h3 class="m-two-images__heading m-two-images__heading--second m:text-center">{{ section.settings.image_2_heading }}</h3>
+          {% endif %}
+          {% if section.settings.image_2 != blank %}
+            {% if section.settings.image_2_link != blank %}<a href="{{ section.settings.image_2_link }}">{% endif %}
+            {% render 'responsive-image', image: section.settings.image_2, image_class: 'm:w-full m:h-full' %}
+            {% if section.settings.image_2_link != blank %}</a>{% endif %}
+          {% else %}
+            <div class="m-two-images__placeholder">
+              {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg' }}
+            </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
@@ -165,16 +177,47 @@
       "label": "Heading size",
       "default": "h3",
       "options": [
-        { "label": "Extra small", "value": "h5" },
-        { "label": "Small", "value": "h4" },
-        { "label": "Medium", "value": "h3" },
-        { "label": "Large", "value": "h2" },
-        { "label": "Extra large", "value": "h1" }
+        {
+          "label": "Extra small",
+          "value": "h5"
+        },
+        {
+          "label": "Small",
+          "value": "h4"
+        },
+        {
+          "label": "Medium",
+          "value": "h3"
+        },
+        {
+          "label": "Large",
+          "value": "h2"
+        },
+        {
+          "label": "Extra large",
+          "value": "h1"
+        }
       ]
     },
     {
       "type": "header",
-      "content": "Image 1 Width"
+      "content": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "image_1_heading",
+      "label": "First image heading",
+      "default": "Image Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First image"
+    },
+    {
+      "type": "url",
+      "id": "image_1_link",
+      "label": "First image link"
     },
     {
       "type": "select",
@@ -182,18 +225,55 @@
       "label": "First image width",
       "default": "50",
       "options": [
-        { "value": "25", "label": "25%" },
-        { "value": "33", "label": "33%" },
-        { "value": "40", "label": "40%" },
-        { "value": "50", "label": "50%" },
-        { "value": "60", "label": "60%" },
-        { "value": "67", "label": "67%" },
-        { "value": "75", "label": "75%" }
+        {
+          "value": "25",
+          "label": "25%"
+        },
+        {
+          "value": "33",
+          "label": "33%"
+        },
+        {
+          "value": "40",
+          "label": "40%"
+        },
+        {
+          "value": "50",
+          "label": "50%"
+        },
+        {
+          "value": "60",
+          "label": "60%"
+        },
+        {
+          "value": "67",
+          "label": "67%"
+        },
+        {
+          "value": "75",
+          "label": "75%"
+        }
       ]
     },
     {
       "type": "header",
-      "content": "Image 2 Width"
+      "content": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "image_2_heading",
+      "label": "Second image heading",
+      "default": "Image Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second image"
+    },
+    {
+      "type": "url",
+      "id": "image_2_link",
+      "label": "Second image link"
     },
     {
       "type": "select",
@@ -201,18 +281,39 @@
       "label": "Second image width",
       "default": "50",
       "options": [
-        { "value": "25", "label": "25%" },
-        { "value": "33", "label": "33%" },
-        { "value": "40", "label": "40%" },
-        { "value": "50", "label": "50%" },
-        { "value": "60", "label": "60%" },
-        { "value": "67", "label": "67%" },
-        { "value": "75", "label": "75%" }
+        {
+          "value": "25",
+          "label": "25%"
+        },
+        {
+          "value": "33",
+          "label": "33%"
+        },
+        {
+          "value": "40",
+          "label": "40%"
+        },
+        {
+          "value": "50",
+          "label": "50%"
+        },
+        {
+          "value": "60",
+          "label": "60%"
+        },
+        {
+          "value": "67",
+          "label": "67%"
+        },
+        {
+          "value": "75",
+          "label": "75%"
+        }
       ]
     },
     {
       "type": "header",
-      "content": "Layout Settings"
+      "content": "Layout"
     },
     {
       "type": "range",
@@ -250,8 +351,14 @@
       "label": "Mobile layout",
       "default": "stack",
       "options": [
-        { "value": "stack", "label": "Stack vertically" },
-        { "value": "inline", "label": "Side by side" }
+        {
+          "value": "stack",
+          "label": "Stack vertically"
+        },
+        {
+          "value": "inline",
+          "label": "Side by side"
+        }
       ]
     },
     {
@@ -297,59 +404,25 @@
       "label": "Visible in the view animation",
       "default": "inherit",
       "options": [
-        { "value": "inherit", "label": "Inherit global setting" },
-        { "value": "fade-in", "label": "Fade in" },
-        { "value": "fade-in-up", "label": "Fade in up" },
-        { "value": "fade-in-left", "label": "Fade in left" },
-        { "value": "fade-in-right", "label": "Fade in right" }
-      ]
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": "Image",
-      "limit": 2,
-      "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
+          "value": "inherit",
+          "label": "Inherit global setting"
         },
         {
-          "type": "text",
-          "id": "heading",
-          "label": "Heading",
-          "default": "Image Heading"
+          "value": "fade-in",
+          "label": "Fade in"
         },
         {
-          "type": "url",
-          "id": "link",
-          "label": "Link"
+          "value": "fade-in-up",
+          "label": "Fade in up"
         },
         {
-          "type": "header",
-          "content": "Block Padding"
+          "value": "fade-in-left",
+          "label": "Fade in left"
         },
         {
-          "type": "range",
-          "id": "padding_top",
-          "label": "Padding Top",
-          "min": 0,
-          "max": 100,
-          "step": 2,
-          "default": 0,
-          "unit": "px"
-        },
-        {
-          "type": "range",
-          "id": "padding_bottom",
-          "label": "Padding Bottom",
-          "min": 0,
-          "max": 100,
-          "step": 2,
-          "default": 0,
-          "unit": "px"
+          "value": "fade-in-right",
+          "label": "Fade in right"
         }
       ]
     }
@@ -357,10 +430,7 @@
   "presets": [
     {
       "name": "Two Images",
-      "blocks": [
-        { "type": "image" },
-        { "type": "image" }
-      ]
+      "category": "Image"
     }
   ]
 }

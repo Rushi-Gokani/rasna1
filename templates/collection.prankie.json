@@ -37,17 +37,46 @@
         "color_scheme": "",
         "heading": "",
         "heading_size": "h3",
+        "image_1_heading": "Image Heading",
         "image_1": "shopify://shop_images/rasn1231.png",
         "image_1_link": "",
         "image_1_width": "40",
+        "image_2_heading": "Image Heading",
         "image_2": "shopify://shop_images/Rasna1981.png",
         "image_2_link": "",
         "image_2_width": "50",
+        "heading_font_size": 18,
         "image_gap": 54,
         "image_gap_mobile": 10,
         "mobile_layout": "stack",
         "padding_top": 148,
         "padding_bottom": 0,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "two_images_PHUtCx": {
+      "type": "two-images",
+      "name": "Two Images",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "",
+        "heading_size": "h3",
+        "image_1_heading": "Rasna Nutri+ 32 Glasses Pack : Including Fruit Beverage Mix & Flavoured Drink Mix",
+        "image_1": "shopify://shop_images/rasn1231.png",
+        "image_1_link": "",
+        "image_1_width": "50",
+        "image_2_heading": "Rasna Insta Nutri+ 500g Pack : Instant Fruit Beverage Mix",
+        "image_2": "shopify://shop_images/Rasna1981.png",
+        "image_2_link": "",
+        "image_2_width": "50",
+        "heading_font_size": 18,
+        "image_gap": 20,
+        "image_gap_mobile": 10,
+        "mobile_layout": "stack",
+        "padding_top": 56,
+        "padding_bottom": 28,
         "custom_class": "",
         "animations": "inherit"
       }
@@ -133,6 +162,7 @@
   "order": [
     "collection-header",
     "two_images_4NmznM",
+    "two_images_PHUtCx",
     "main",
     "recent-viewed"
   ]

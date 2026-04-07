@@ -51,7 +51,7 @@
         "manufacturer_point_qqf3VX": {
           "type": "manufacturer_point",
           "settings": {
-            "detail_text": "(E)  Mfg.by:  JR FOOD PRODUCTS\n                V. Theri Baba Sawan Singh, Hisar Road, Near NH9, Dist. Sirsa, Haryana- 125055.\n             Fssai Lic. No. 10818019000121",
+            "detail_text": "(E)  Mfg.by:  JR FOOD PRODUCTS\n                V. Theri Baba Sawan Singh, Hisar Road, Near NH9, Dist. Sirsa, Haryana- 125055",
             "manufacturer_logo": "shopify://shop_images/fssai_logo.png",
             "manufacturer_license": "<p><strong>Lic. No. 10818019000121</strong></p>"
           }
@@ -66,7 +66,7 @@
       ],
       "settings": {
         "container": "container-fluid",
-        "description": "<p><strong>Mfg.by:</strong><br/>For Manufacturing details refer to the first letter of code A/B/C/D of the Batch number.</p>",
+        "description": "<p><strong>Mfg.by:</strong><br/>For Manufacturing details refer to the first letter of code A/B/C/D/E of the Batch number.</p>",
         "license_number": "",
         "facebook_link": "https://www.facebook.com/rasnainternational",
         "instagram_link": "https://www.instagram.com/rasna_international/",
